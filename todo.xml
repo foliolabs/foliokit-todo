@@ -15,6 +15,7 @@
     <administration>
         <menu page="todo-items" capability="manage_options" route="component=todo&amp;view=items">Todo</menu>
         <submenu>
+            <menu page="todo-items" capability="manage_options">All Todos</menu>
             <menu page="todo-item" capability="manage_options" route="component=todo&amp;view=item">New Todo</menu>
         </submenu>
     </administration>
