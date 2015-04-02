@@ -10,12 +10,96 @@
 
 defined('KOOWA') or die; ?>
 
-<?php if(count($items)): ?>
-    <ul>
-    <?php foreach($items as $item) : ?>
-        <li><input type="checkbox" name="item[]" value="<?=$item->id?>" /><a href="<?=@route('&page=todo-items&view=item&id='.$item->id)?>"><?=$item->title?></a></li>
-    <?php endforeach?>
-    </ul>
-<?php else: ?>
-No items found
-<?php endif ?>
+<ktml:style src="media://todo/css/admin.css" />
+<ktml:script src="media://todo/js/admin.js" />
+
+<div class="wrap todo-container">
+    <h2><?= translate('Todo Items') ?></h2>
+    <div class="todo_admin_list_grid">
+        <form action="" method="get" class="-koowa-grid">
+            <div class="scopebar">
+                <div class="scopebar-group hidden-tablet hidden-phone">
+                    <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
+                       href="<?= route('page=todo-items&enabled=&search=' ) ?>">
+                        <?= translate('All') ?>
+                    </a>
+                </div>
+                <div class="scopebar-group last hidden-tablet hidden-phone">
+                    <a class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>"
+                       href="<?= route('page=todo-items&enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
+                        <?= translate('Unpublished') ?>
+                    </a>
+                    <a class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>"
+                       href="<?= route('page=todo-items&enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
+                        <?= translate('Published') ?>
+                    </a>
+                </div>
+                <div class="scopebar-search">
+                    <?= helper('grid.search', array('submit_on_clear' => true)) ?>
+                </div>
+            </div>
+            <div class="todo_table_container">
+                <table class="table table-striped footable">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;" width="1">
+                            <?= helper('grid.checkall')?>
+                        </th>
+                        <th class="todo_table__title_field">
+                            <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
+                        </th>
+                        <th width="5%" data-hide="phone,phablet">
+                            <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
+                        </th>
+                        <th width="5%" data-hide="phone,phablet,tablet">
+                            <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
+                        </th>
+                        <th width="5%" data-hide="phone,phablet">
+                            <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
+                        </th>
+                    </tr>
+                </thead>
+                <? if (count($items)): ?>
+                <tfoot>
+                    <tr>
+                        <td colspan="9">
+                            <?= helper('paginator.pagination') ?>
+                        </td>
+                    </tr>
+                </tfoot>
+                <? endif; ?>
+                <tbody>
+                    <? foreach ($items as $item): ?>
+                    <tr>
+                        <td style="text-align: center;">
+                            <?= helper('grid.checkbox', array('entity' => $item)) ?>
+                        </td>
+                        <td class="todo_table__title_field">
+                            <a href="<?= route('page=todo-items&page=todo-items&view=item&id='.$item->id); ?>">
+                                <?= escape($item->title); ?></a>
+                        </td>
+                        <td style="text-align: center">
+
+                        </td>
+                        <td>
+                            <?= escape($item->getAuthor()->getName()); ?>
+                        </td>
+                        <td>
+                            <?= helper('date.format', array('date' => $item->created_on)); ?>
+                        </td>
+                    </tr>
+                    <? endforeach; ?>
+
+                    <? if (!count($items)) : ?>
+                    <tr>
+                        <td colspan="9" align="center" style="text-align: center;">
+                            <?= translate('No items found.') ?>
+                        </td>
+                    </tr>
+                    <? endif; ?>
+                </tbody>
+            </table>
+            </div>
+        </form>
+    </div>
+</div>

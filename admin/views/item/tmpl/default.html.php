@@ -10,9 +10,9 @@
 
 defined('KOOWA') or die; ?>
 
-<h1><?if($item->id):?>Edit <?=$item->title?> <?else:?>New Todo<?endif?></h1>
+<h2><?if($item->id):?>Edit <?=$item->title?> <?else:?>New Todo<?endif?></h2>
 
-<form action="<?=@route('&page=todo-items&component=todo&view=items&id='.$item->id)?>" method="post">
+<form action="<?=@route('&page=todo-items&component=todo&view=items&id='.$item->id)?>" method="post" class="-koowa-form">
 <div>
     <label>Todo <input type="text" name="title" value="<?=$item->title?>" size="100" /></label>
     <div><input type="submit" name="submittodo" value="Save" /></div>
