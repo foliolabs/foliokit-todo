@@ -10,13 +10,13 @@
     </author>
     <copyright>Copyright (C) 2011 - 2015 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
     <license>http://www.gnu.org/licenses/gpl.html GNU/GPL v3</license>
-    <description>Helloworld plugin for Wordpress</description>
+    <description>Todo plugin for Wordpress build using Nooku Framework</description>
 
     <administration>
         <menu page="todo-items" capability="manage_options" route="component=todo&amp;view=items">Todo</menu>
         <submenu>
-            <menu page="todo-items" capability="manage_options">All Todos</menu>
-            <menu page="todo-item" capability="manage_options" route="component=todo&amp;view=item">New Todo</menu>
+            <menu page="todo-items" capability="manage_options">All Tasks</menu>
+            <menu page="todo-item" capability="manage_options" route="component=todo&amp;view=item">New Task</menu>
         </submenu>
     </administration>
 </extension>

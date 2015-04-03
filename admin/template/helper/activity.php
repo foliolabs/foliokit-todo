@@ -1,11 +1,10 @@
 <?php
 /**
- * Todo - a Joomla example extension built with Nooku Framework.
+ * Todo Plugin for Wordpress
  *
- * @package     Todo
- * @copyright   Copyright (C) 2011 - 2014 Timble CVBA. (http://www.timble.net)
+ * @copyright   Copyright (C) 2007 - 2015 Johan Janssens and Timble CVBA. (http://www.timble.net)
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link        https://github.com/nooku/joomla-todo for the canonical source repository
+ * @link        https://github.com/nooku/wordpress-todo for the canonical source repository
  */
 
 class ComTodoTemplateHelperActivity extends ComActivitiesTemplateHelperActivity
