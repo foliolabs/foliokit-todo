@@ -19,9 +19,5 @@ class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
         $this->addSeparator();
         $this->addPublish(array('allowed' => $controller->canEdit()));
         $this->addUnpublish(array('allowed' => $controller->canEdit()));
-
-        if ($controller->canAdmin()) {
-            $this->addSeparator()->addOptions();
-        }
     }
 }
