@@ -10,10 +10,13 @@
 
 defined('KOOWA') or die; ?>
 
-<ktml:style src="media://todo/css/admin.css" />
-<ktml:script src="media://todo/js/admin.js" />
+<ktml:style src="media://koowa/css/koowa.css" />
 
-<div class="wrap todo-container">
+<?= helper('behavior.koowa') ?>
+
+<ktml:toolbar type="actionbar" />
+
+<div class="wrap todo-container koowa admin">
     <h2><?= translate('Todo Items') ?></h2>
     <div class="todo_admin_list_grid">
         <form action="" method="get" class="-koowa-grid">
@@ -79,7 +82,7 @@ defined('KOOWA') or die; ?>
                                 <?= escape($item->title); ?></a>
                         </td>
                         <td style="text-align: center">
-
+                            <?= helper('grid.publish', array('entity' => $item, 'clickable' => true)) ?>
                         </td>
                         <td>
                             <?= escape($item->getAuthor()->getName()); ?>

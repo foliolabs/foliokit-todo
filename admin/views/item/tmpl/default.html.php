@@ -10,11 +10,13 @@
 
 defined('KOOWA') or die; ?>
 
+<ktml:style src="media://koowa/css/koowa.css" />
+
 <?= helper('behavior.validator'); ?>
 
 <ktml:toolbar type="actionbar" />
 
-<div class="todo_form_layout">
+<div class="todo_form_layout koowa admin">
     <form action="" method="post" class="-koowa-form">
         <div class="todo_container">
             <div class="todo_grid">
@@ -55,6 +57,24 @@ defined('KOOWA') or die; ?>
                             </div>
                         </div>
 
+                    </fieldset>
+                </div>
+                <div class="one-third">
+                    <fieldset>
+                        <legend><?= translate('Publishing') ?></legend>
+                        <div class="todo_grid">
+                            <div class="control-group todo_grid__item one-whole">
+                                <label class="control-label"><?= translate('Status'); ?></label>
+                                <div class="controls radio btn-group">
+                                    <?= helper('select.booleanlist', array(
+                                        'name' => 'enabled',
+                                        'selected' => $item->enabled,
+                                        'true' => translate('Published'),
+                                        'false' => translate('Unpublished')
+                                    )); ?>
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
                 </div>
             </div>
