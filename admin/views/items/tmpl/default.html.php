@@ -19,7 +19,7 @@ defined('KOOWA') or die; ?>
 <div class="wrap todo-container koowa admin">
     <h2><?= translate('Todo Items') ?></h2>
     <div class="todo_admin_list_grid">
-        <form action="" method="get" class="-koowa-grid">
+        <form action="<?= route('page=todo-items') ?>" method="get" class="-koowa-grid">
             <div class="scopebar">
                 <div class="scopebar-group hidden-tablet hidden-phone">
                     <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
