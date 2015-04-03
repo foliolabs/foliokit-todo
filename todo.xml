@@ -15,8 +15,8 @@
     <administration>
         <menu page="todo-items" capability="manage_options" route="component=todo&amp;view=items">Todo</menu>
         <submenu>
-            <menu page="todo-items" capability="manage_options">All Tasks</menu>
-            <menu page="todo-item" capability="manage_options" route="component=todo&amp;view=item">New Task</menu>
+            <menu page="todo-items" capability="manage_options">Tasks</menu>
+            <menu page="todo-activities" capability="manage_options" route="component=todo&amp;view=activities">Activities</menu>
         </submenu>
     </administration>
 </extension>
