@@ -19,10 +19,23 @@ defined( 'ABSPATH' ) or die();
 
 add_action('koowa_before_bootstrap', 'todo_bootstrap');
 
+register_activation_hook(__FILE__, 'todo_installer');
+register_uninstall_hook(__FILE__,  'todo_uninstaller');
+
 function todo_bootstrap()
 {
     KObjectManager::getInstance()
         ->getObject('lib:object.bootstrapper')
         ->registerComponent('todo', __DIR__, 'todo')
         ->registerComponent('todo', __DIR__.'/admin', 'admin');
+}
+
+function todo_installer() {
+    require_once(__DIR__.'/resources/install/install.php');
+    todo_install();
+}
+
+function todo_uninstaller() {
+    require_once(__DIR__.'/resources/install/uninstall.php');
+    todo_uninstall();
 }
