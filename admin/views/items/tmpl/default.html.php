@@ -18,21 +18,21 @@ defined('KOOWA') or die; ?>
 <div class="wrap todo-container koowa admin">
     <h2><?= translate('Todo Items') ?></h2>
     <div class="todo_admin_list_grid">
-        <form action="<?= route('page=todo-items') ?>" method="get" class="-koowa-grid">
+        <form action="" method="get" class="-koowa-grid">
             <div class="scopebar">
                 <div class="scopebar-group hidden-tablet hidden-phone">
                     <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
-                       href="<?= route('page=todo-items&enabled=&search=' ) ?>">
+                       href="<?= route('enabled=&search=' ) ?>">
                         <?= translate('All') ?>
                     </a>
                 </div>
                 <div class="scopebar-group last hidden-tablet hidden-phone">
                     <a class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>"
-                       href="<?= route('page=todo-items&enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
+                       href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
                         <?= translate('Unpublished') ?>
                     </a>
                     <a class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>"
-                       href="<?= route('page=todo-items&enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
+                       href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
                         <?= translate('Published') ?>
                     </a>
                 </div>
@@ -77,7 +77,7 @@ defined('KOOWA') or die; ?>
                             <?= helper('grid.checkbox', array('entity' => $item)) ?>
                         </td>
                         <td class="todo_table__title_field">
-                            <a href="<?= route('page=todo-items&page=todo-items&view=item&id='.$item->id); ?>">
+                            <a href="<?= route('view=item&id='.$item->id); ?>">
                                 <?= escape($item->title); ?></a>
                         </td>
                         <td style="text-align: center">
