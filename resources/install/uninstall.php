@@ -1,6 +1,7 @@
 <?php
 
-function todo_uninstall() {
+function todo_uninstall()
+{
     $db  = $GLOBALS['wpdb'];
     $sql = str_replace('#__', $db->prefix, file_get_contents(__DIR__.'/uninstall.sql'));
 

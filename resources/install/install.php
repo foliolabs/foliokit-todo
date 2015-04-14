@@ -1,6 +1,7 @@
 <?php
 
-function todo_install() {
+function todo_install()
+{
     if (is_plugin_active('koowa/koowa.php'))
     {
         $installed = get_option('todo_installed');

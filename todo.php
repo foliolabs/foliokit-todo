@@ -17,17 +17,27 @@ Author URI: http://nooku.org/
 */
 defined( 'ABSPATH' ) or die();
 
-add_action('koowa_before_bootstrap', 'todo_bootstrap');
-
-register_activation_hook(__FILE__, 'todo_installer');
-register_uninstall_hook(__FILE__,  'todo_uninstaller');
+add_action('koowa_before_bootstrap',  'todo_bootstrap');
+register_activation_hook(__FILE__,   'todo_installer');
+register_uninstall_hook(__FILE__,    'todo_uninstaller');
 
 function todo_bootstrap()
 {
-    KObjectManager::getInstance()
-        ->getObject('lib:object.bootstrapper')
+    $manager = KObjectManager::getInstance();
+    $manager->getObject('lib:object.bootstrapper')
         ->registerComponent('todo', __DIR__, 'todo')
-        ->registerComponent('todo', __DIR__.'/admin', 'admin');
+        //->registerComponent('todo', __DIR__.'/admin', 'admin');
+        ->registerComponent('todo', __DIR__.'/site', 'site');
+
+    /*
+    // Use the updater and check releases from GitHub
+    if(is_admin()) {
+        $manager->getObject('com:todo.resources.updater', array(
+            'plugin_file'  => __FILE__,
+            'releases_url' => 'https://api.github.com/repos/nooku/wordpress-todo/releases'
+        ));
+    }
+    */
 }
 
 function todo_installer() {
