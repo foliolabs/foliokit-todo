@@ -17,4 +17,18 @@ class ComTodoControllerItem extends ComKoowaControllerModel
 
 		parent::_initialize($config);
 	}
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $query = $request->query;
+
+        // Show only published tasks if user can't publish posts
+        if (!current_user_can('publish_posts')) {
+            $query->enabled = 1;
+        }
+
+        return $request;
+    }
 }
