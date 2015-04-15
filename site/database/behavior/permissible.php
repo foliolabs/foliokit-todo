@@ -11,6 +11,6 @@ class ComTodoDatabaseBehaviorPermissible extends KDatabaseBehaviorAbstract
 {
     public function canPerform($action)
     {
-        return true;
+        return $this->getObject('user')->authorise($action);
     }
 }

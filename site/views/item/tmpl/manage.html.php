@@ -9,8 +9,8 @@
 
 defined('KOOWA') or die;
 
-$show_delete   = $item->canPerform('delete');
-$show_edit     = $item->canPerform('edit');
+$show_delete   = $item->canPerform('delete_posts');
+$show_edit     = $item->canPerform('edit_posts');
 $button_size   = 'btn-small';
 ?>
 
