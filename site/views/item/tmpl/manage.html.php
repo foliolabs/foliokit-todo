@@ -41,15 +41,12 @@ $button_size   = 'btn-small';
                 if ((string)object('request')->getReferrer()) {
                     $data['params']['_referrer'] = base64_encode((string) object('request')->getReferrer());
                 } else {
-                    $data['params']['_referrer'] = base64_encode(JURI::base());
+                    $data['params']['_referrer'] = base64_encode(object('request')->getSiteUrl());
                 }
-
             }
         ?>
             <?= helper('behavior.deletable'); ?>
-            <a class="btn <?= $button_size ?> btn-danger todo-deletable" href="#" rel="<?= escape(json_encode($data)) ?>">
-                <?= translate('Delete') ?>
-            </a>
+            <a class="btn <?= $button_size ?> btn-danger todo-deletable" href="#" rel="<?= escape(json_encode($data)) ?>"><?= translate('Delete') ?></a>
         <? endif ?>
     </div>
 </div>
