@@ -14,14 +14,8 @@ defined('KOOWA') or die; ?>
     <div class="control-group todo_grid__item one-whole">
         <div class="controls">
             <?= helper('editor.display', array(
-                'name' => 'description',
-                'value' => $item->description,
-                'id'   => 'description',
-                'width' => '100%',
-                'height' => '341',
-                'cols' => '100',
-                'rows' => '20',
-                'buttons' => array('pagebreak')
+                'name'  => 'description',
+                'value' => $item->description
             )); ?>
         </div>
     </div>
