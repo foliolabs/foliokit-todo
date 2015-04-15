@@ -25,7 +25,7 @@ class ComTodoControllerItem extends ComKoowaControllerModel
         $query = $request->query;
 
         // Show only published tasks if user can't publish posts
-        if (!current_user_can('publish_posts')) {
+        if (!$this->getUser()->authorise('publish_posts')) {
             $query->enabled = 1;
         }
 
