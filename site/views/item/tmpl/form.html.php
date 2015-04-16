@@ -9,7 +9,7 @@
 
 defined('KOOWA') or die; ?>
 
-<ktml:style src="media://koowa/css/koowa.css" />
+<ktml:style src="media://css/koowa.css" />
 <ktml:style src="media://todo/css/site.css" />
 
 <?= helper('bootstrap.load'); ?>
@@ -23,7 +23,6 @@ defined('KOOWA') or die; ?>
 
 <? // Form ?>
 <div class="koowa_form">
-
     <div class="todo_form_layout">
         <form action="<?= route('id='. $item->id) ?>" method="post" class="-koowa-form">
 
