@@ -27,9 +27,8 @@ class ComTodoDispatcherRouter extends ComKoowaDispatcherRouterAbstract
             if(in_array($view, array('item', 'items')))
             {
                 $query['view'] = $view;
-
-                if($id = array_shift($segments) && $view == 'item') {
-                    $query['id'] = $id;
+                if($view == 'item') {
+                    $query['id'] = array_shift($segments);
                 }
             }
         }
