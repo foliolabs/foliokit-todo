@@ -9,7 +9,7 @@
 
 defined('KOOWA') or die; ?>
 
-<ktml:style src="media://css/koowa.css" />
+<ktml:style src="assets://css/koowa.css" />
 
 <?= helper('behavior.koowa') ?>
 
