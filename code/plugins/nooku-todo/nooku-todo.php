@@ -9,7 +9,7 @@
 
 /*
 Plugin Name: Todo
-Plugin URI: http://github.com/nooku/wordpress-todo
+Plugin URI: http://github.com/nooku/wp-todo
 Description: TODO Plugin for Wordpress
 Author: Johan Janssens and Timble CVBA
 Version: 0.1
@@ -34,7 +34,7 @@ function todo_bootstrap()
     if(is_admin()) {
         $manager->getObject('com:todo.resources.updater', array(
             'plugin_file'  => __FILE__,
-            'releases_url' => 'https://api.github.com/repos/nooku/wordpress-todo/releases'
+            'releases_url' => 'https://api.github.com/repos/nooku/wp-todo/releases'
         ));
     }
     */
