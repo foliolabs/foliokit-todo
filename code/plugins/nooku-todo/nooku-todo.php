@@ -17,7 +17,7 @@ Author URI: http://nooku.org/
 */
 defined( 'ABSPATH' ) or die();
 
-add_action('koowa_before_bootstrap',  'todo_bootstrap');
+add_action('koowa_before_bootstrap', 'todo_bootstrap');
 register_activation_hook(__FILE__,   'todo_installer');
 register_uninstall_hook(__FILE__,    'todo_uninstaller');
 
