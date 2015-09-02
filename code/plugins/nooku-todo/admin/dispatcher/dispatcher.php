@@ -7,7 +7,7 @@
  * @link        https://github.com/nooku/wordpress-todo for the canonical source repository
  */
 
-class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
+class ComTodoDispatcher extends ComKoowaDispatcher
 {
     protected function _initialize(KObjectConfig $config)
     {
@@ -16,20 +16,5 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
         ));
 
         parent::_initialize($config);
-    }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        $query = $request->query;
-
-        // Force tmpl=koowa for form layouts
-        if ($query->layout === 'form') {
-            $query->tmpl = 'koowa';
-        }
-
-        return $request;
-
     }
 }
