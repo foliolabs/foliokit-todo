@@ -9,75 +9,132 @@
 
 defined('KOOWA') or die; ?>
 
-<ktml:style src="assets://css/koowa.css" />
-
 <?= helper('behavior.validator'); ?>
+<?= helper('bootstrap.load', array('javascript' => true)); ?>
+<?= helper('behavior.koowa'); ?>
 
-<ktml:toolbar type="actionbar" />
 
-<div class="todo_form_layout koowa admin">
-    <form action="" method="post" class="-koowa-form">
-        <div class="todo_container">
-            <div class="todo_grid">
-                <div class="two-thirds">
-                    <fieldset>
+<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
+<ktml:style src="assets://css/admin-wordpress.css" />
+<ktml:script src="assets://js/admin.js" />
+<?php // END ?>
 
-                        <legend><?= translate('Details') ?></legend>
 
-                        <div class="todo_grid">
-                            <div class="control-group two-thirds">
-                                <label class="control-label" for="todo_form_title"><?= translate('Title') ?></label>
+<!-- Form layout -->
+<div class="k-form">
+
+    <!-- Form -->
+    <form action="" method="post" class="k-content-wrapper -koowa-form">
+
+        <!-- The content -->
+        <div class="k-content">
+
+            <!-- Toolbar -->
+            <div class="k-toolbar">
+                <div class="koowa-toolbar">
+                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
+                </div>
+            </div>
+
+            <!-- Component -->
+            <div class="k-component">
+
+                <!-- Container -->
+                <div class="k-container">
+
+                    <!-- Main information -->
+                    <div class="k-container__main">
+
+                        <fieldset>
+                            <div class="control-group">
                                 <div class="controls">
-                                    <div class="input-group">
-                                        <input required class="input-group-form-control" id="todo_form_title" type="text" name="title" maxlength="255"
-                                               value="<?= escape($item->title); ?>" />
+
+                                    <input
+                                        required
+                                        class="form-control input-lg"
+                                        id="todo_form_title"
+                                        type="text"
+                                        name="title"
+                                        maxlength="255"
+                                        value="<?= escape($item->title); ?>"
+                                        placeholder="Enter title here"
+                                        />
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+
+                                    <div class="input-group input-group-sm">
+                                        <label for="todo_form_alias" class="input-group-addon">
+                                            Alias
+                                        </label>
+                                        <input
+                                            id="todo_form_alias"
+                                            type="text"
+                                            class="form-control"
+                                            name="slug"
+                                            maxlength="255"
+                                            value="<?= escape($item->slug) ?>"
+                                            placeholder="Will be created automatically"
+                                            />
                                     </div>
                                 </div>
                             </div>
-                            <div class="control-group one-third">
-                                <label class="control-label" for="todo_form_alias"><?= translate('Alias') ?></label>
-                                <div class="controls">
-                                    <input id="todo_form_alias" type="text" class="input-block-level" name="slug" maxlength="255"
-                                           value="<?= escape($item->slug) ?>" />
-                                </div>
-                            </div>
-                        </div>
 
-                        <legend><?= translate('Description') ?></legend>
-
-                        <div class="todo_grid description_container">
-                            <div class="control-group one-whole">
+                            <div class="control-group">
                                 <div class="controls">
                                     <?= helper('editor.display', array(
-                                        'name'  => 'description',
-                                        'value' => $item->description
+                                        'name' => 'description',
+                                        'value' => $item->description,
+                                        'id'   => 'description',
+                                        'width' => '100%',
+                                        'height' => '341',
+                                        'cols' => '100',
+                                        'rows' => '20',
+                                        'buttons' => array('pagebreak')
                                     )); ?>
                                 </div>
                             </div>
-                        </div>
 
-                    </fieldset>
-                </div>
-                <div class="one-third">
-                    <fieldset>
-                        <legend><?= translate('Publishing') ?></legend>
-                        <div class="todo_grid">
-                            <div class="control-group todo_grid__item one-whole">
-                                <label class="control-label"><?= translate('Status'); ?></label>
-                                <div class="controls radio btn-group">
-                                    <?= helper('select.booleanlist', array(
-                                        'name' => 'enabled',
-                                        'selected' => $item->enabled,
-                                        'true' => translate('Published'),
-                                        'false' => translate('Unpublished')
-                                    )); ?>
+                        </fieldset>
+
+                    </div><!-- .k-container__main -->
+
+                    <!-- Other information -->
+                    <div class="k-container__sub">
+
+                        <fieldset class="k-form-block">
+
+                            <div class="k-form-block__header">
+                                <?= translate('Publishing') ?>
+                            </div>
+
+                            <div class="k-form-block__content">
+                                <div class="control-group">
+                                    <div class="control-content">
+                                        <label class="control-label">Status</label>
+                                        <div class="controls">
+                                            <?= helper('select.booleanlist', array(
+                                                'name' => 'enabled',
+                                                'selected' => $item->enabled,
+                                                'true' => translate('Published'),
+                                                'false' => translate('Unpublished')
+                                            )); ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
+                        </fieldset>
 
-    </form>
-</div>
+                    </div><!-- .k-container__sub -->
+
+                </div><!-- .k-container -->
+
+            </div><!-- .k-component -->
+
+        </div><!-- .k-content -->
+
+    </form><!-- .k-content-wrapper -->
+
+</div><!-- .k-form -->
