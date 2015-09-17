@@ -10,8 +10,7 @@
 defined('KOOWA') or die; ?>
 
 
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
-<?= helper('behavior.koowa') ?>
+<?= helper('behavior.ui'); ?>
 
 
 <?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>

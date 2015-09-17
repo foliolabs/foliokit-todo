@@ -9,8 +9,7 @@
 
 defined('KOOWA') or die; ?>
 
-<?= helper('bootstrap.load'); ?>
-<?= helper('behavior.koowa');?>
+<?= helper('behavior.ui'); ?>
 <?= helper('behavior.modal');?>
 
 <? // Toolbar ?>

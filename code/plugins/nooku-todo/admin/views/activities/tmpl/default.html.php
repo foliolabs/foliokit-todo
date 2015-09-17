@@ -9,14 +9,8 @@
 
 defined('KOOWA') or die; ?>
 
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
+<?= helper('behavior.ui'); ?>
 <?= helper('behavior.koowa'); ?>
-
-
-<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
-<ktml:script src="assets://js/admin.js" />
-<?php // END ?>
-
 
 <!-- Overview layout -->
 <div class="k-overview">
