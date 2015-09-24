@@ -190,3 +190,21 @@ defined('KOOWA') or die; ?>
     </form><!-- .k-content-wrapper -->
 
 </div><!-- .k-overview -->
+
+<script>
+    jQuery(document).ready(function($) {
+
+        // @TODO: this temp script should be replaced by something in the core and something more robust
+
+        // Temporary toggle
+        $('.k-scopebar__item--filters button').on('click', function(){
+            $(this).parent().toggleClass('js-is-active');
+            $('.k-filter-container__item').slideToggle();
+        });
+
+        $('.k-filter-container__close').on('click', function(){
+            $('.k-scopebar__item--filters li').toggleClass('js-is-active');
+            $('.k-filter-container__item').slideToggle();
+        });
+    });
+</script>
