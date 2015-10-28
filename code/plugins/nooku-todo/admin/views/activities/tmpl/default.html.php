@@ -13,147 +13,37 @@ defined('KOOWA') or die; ?>
 <?= helper('behavior.koowa'); ?>
 
 <!-- Overview layout -->
-<div class="k-overview">
+<div class="k-content-wrapper">
 
-    <!-- Form -->
-    <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
+    <!-- Sidebar -->
+    <?= import('default_sidebar.html'); ?>
 
-        <!-- Sidebar -->
-        <div id="k-sidebar" class="k-sidebar">
+    <!-- Content -->
+    <div class="k-content">
 
-            <!-- Navigation -->
-            <div class="k-sidebar__navigation">
-                <ktml:toolbar type="menubar">
+        <!-- Toolbar -->
+        <div class="k-toolbar">
+            <div class="koowa-toolbar">
+                <ktml:toolbar type="actionbar" icon="task icon-stack">
             </div>
+        </div><!-- .k-toolbar -->
 
-            <!-- Filters -->
-            <div class="k-sidebar__item">
-                <div class="k-sidebar__content">
-                    <ul class="k-list">
-                        <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
-                            <a href="<?= route('user=') ?>">
-                                <span class="k-icon-list"></span>
-                                All activities
-                            </a>
-                        </li>
-                        <li class="<?= parameters()->user ? 'active' : ''; ?>">
-                            <a href="<?= route('user='.object('user')->getId()) ?>">
-                                <span class="k-icon-person"></span>
-                                My activities
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div><!-- .k-sidebar -->
+        <!-- Component -->
+        <div class="k-component">
 
-        <!-- Content -->
-        <div class="k-content">
-
-            <!-- Toolbar -->
-            <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <!-- Sidebar toggle button -->
-                    <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
-                        <span class="bar1"></span>
-                        <span class="bar2"></span>
-                        <span class="bar3"></span>
-                    </button>
-                    <!-- Buttons -->
-                    <ktml:toolbar type="actionbar" icon="task icon-stack">
-                </div>
-            </div><!-- .k-toolbar -->
-
-            <!-- Component -->
-            <div class="k-component">
+            <!-- Form -->
+            <form class="k-list-layout -koowa-grid" action="" method="get">
 
                 <!-- Scopebar -->
-                <div class="k-scopebar">
-
-                    <!-- Filter title -->
-                    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
-
-                    <!-- Filters -->
-                    <div class="k-scopebar__item k-scopebar__item--fluid">
-
-                        <!-- Filter -->
-                        <div class="select2-wrapper select2--link-style select2--filter">
-                            <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
-                                <option selected>--Status--</option>
-                                <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>>Created</option>
-                                <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>>Edited</option>
-                                <option value="delete"<?= parameters()->action == 'delete' ? ' selected' : ''; ?>>Deleted</option>
-                            </select>
-                        </div>
-
-                        <!-- Search toggle button -->
-                        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden">Search</span></button>
-
-                    </div>
-
-                    <!-- Search -->
-                    <div class="k-scopebar__item k-scopebar__search">
-                        <?= helper('grid.search', array('submit_on_clear' => true)) ?>
-                    </div>
-
-                </div><!-- .k-scopebar -->
+                <?= import('default_scopebar.html'); ?>
 
                 <!-- Table -->
-                <div class="k-table-container">
-                    <div class="k-table">
-                        <table class="table--fixed">
-                            <thead>
-                            <tr>
-                                <th width="1">
-                                    <?= helper('grid.checkall')?>
-                                </th>
-                                <th>
-                                    <?= translate('Message'); ?>
-                                </th>
-                                <th width="30%">
-                                    <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Time')); ?>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <? foreach ($items as $item): ?>
-                                <tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $item)) ?>
-                                    </td>
-                                    <td>
-                                        <?= helper('com:activities.activity.activity', array('entity' => $item)) ?>
-                                    </td>
-                                    <td>
-                                        <?= helper('date.humanize', array('date' => $item->created_on)); ?>
-                                    </td>
-                                </tr>
-                            <? endforeach; ?>
+                <?= import('default_table.html'); ?>
 
-                            <? if (!count($items)) : ?>
-                                <tr>
-                                    <td colspan="9">
-                                        <?= translate('No activities found.') ?>
-                                    </td>
-                                </tr>
-                            <? endif; ?>
-                            </tbody>
-                        </table>
+            </form><!-- .k-list-layout -->
 
-                    </div><!-- .k-table -->
+        </div><!-- .k-component -->
 
-                    <? if (count($items)): ?>
-                        <div class="k-table-pagination">
-                            <?= helper('paginator.pagination') ?>
-                        </div><!-- .k-table-pagination -->
-                    <? endif; ?>
+    </div><!-- k-content -->
 
-                </div><!-- .k-table-container -->
-
-            </div><!-- .k-component -->
-
-        </div><!-- k-content -->
-
-    </form><!-- .k-content-wrapper -->
-
-</div><!-- .k-overview -->
+</div><!-- .k-content-wrapper -->

@@ -12,30 +12,28 @@ defined('KOOWA') or die; ?>
 <?= helper('behavior.validator'); ?>
 <?= helper('behavior.ui'); ?>
 
-
 <?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
 <ktml:script src="assets://js/admin.js" />
 <?php // END ?>
 
-
 <!-- Form layout -->
-<div class="k-form">
+<div class="k-content-wrapper">
 
-    <!-- Form -->
-    <form action="" method="post" class="k-content-wrapper -koowa-form">
+    <!-- The content -->
+    <div class="k-content">
 
-        <!-- The content -->
-        <div class="k-content">
-
-            <!-- Toolbar -->
-            <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
-                </div>
+        <!-- Toolbar -->
+        <div class="k-toolbar">
+            <div class="koowa-toolbar">
+                <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
             </div>
+        </div>
 
-            <!-- Component -->
-            <div class="k-component">
+        <!-- Component -->
+        <div class="k-component">
+
+            <!-- Form -->
+            <form class="k-form-layout -koowa-form" action="" method="post">
 
                 <!-- Container -->
                 <div class="k-container">
@@ -129,10 +127,10 @@ defined('KOOWA') or die; ?>
 
                 </div><!-- .k-container -->
 
-            </div><!-- .k-component -->
+            </form><!-- .k-form-layout -->
 
-        </div><!-- .k-content -->
+        </div><!-- .k-component -->
 
-    </form><!-- .k-content-wrapper -->
+    </div><!-- .k-content -->
 
-</div><!-- .k-form -->
+</div><!-- .k-content-wrapper -->
