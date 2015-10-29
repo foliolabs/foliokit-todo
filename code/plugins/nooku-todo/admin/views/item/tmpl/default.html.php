@@ -9,12 +9,8 @@
 
 defined('KOOWA') or die; ?>
 
-<?= helper('behavior.validator'); ?>
 <?= helper('behavior.ui'); ?>
-
-<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
-<ktml:script src="assets://js/admin.js" />
-<?php // END ?>
+<?= helper('behavior.validator'); ?>
 
 <!-- Form layout -->
 <div class="k-content-wrapper">
