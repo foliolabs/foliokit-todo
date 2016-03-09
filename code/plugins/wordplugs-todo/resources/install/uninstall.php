@@ -15,6 +15,7 @@ function todo_uninstall()
 
     if($result) {
         delete_option('todo_installed');
+    } else {
+        throw new KExceptionError("Failed to run queries from ".__DIR__.'/uninstall.sql');
     }
-    else throw new KExceptionError("Failed to run queries from ".__DIR__.'/uninstall.sql');
 }
