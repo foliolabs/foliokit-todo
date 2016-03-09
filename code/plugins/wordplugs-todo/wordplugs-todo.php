@@ -17,11 +17,14 @@ Author URI: http://wordplugs.com/
 */
 defined( 'ABSPATH' ) or die();
 
-add_action('koowa_before_bootstrap',  'todo_bootstrap');
-register_activation_hook(__FILE__,   'todo_installer');
-register_uninstall_hook(__FILE__,    'todo_uninstaller');
+register_activation_hook(__FILE__, function()
+{
+    KObjectManager::getInstance()->getObject('com:todo.installer', array(
+        'basepath' => __DIR__
+    ))->install();
+});
 
-function todo_bootstrap()
+add_action('koowa_before_bootstrap', function()
 {
     $manager = KObjectManager::getInstance();
     $manager->getObject('lib:object.bootstrapper')
@@ -38,14 +41,4 @@ function todo_bootstrap()
         ));
     }
     */
-}
-
-function todo_installer() {
-    require_once(__DIR__.'/resources/install/install.php');
-    todo_install();
-}
-
-function todo_uninstaller() {
-    require_once(__DIR__.'/resources/install/uninstall.php');
-    todo_uninstall();
-}
+});

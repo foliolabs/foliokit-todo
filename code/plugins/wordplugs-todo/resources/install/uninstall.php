@@ -9,17 +9,13 @@
 
 function todo_uninstall()
 {
-    $db  = $GLOBALS['wpdb'];
-    $sql = str_replace('#__', $db->prefix, file_get_contents(__DIR__.'/uninstall.sql'));
+    $result = KObjectManager::getInstance()
+                ->getObject('lib:database.adapter.mysqli')
+                ->execute(file_get_contents(__DIR__.'/uninstall.sql'), KDatabase::MULTI_QUERY);
 
-    $matches = array();
-    preg_match_all("/^DROP(?:[^;]|(?:'.*?'))+;\\n*$/im", $sql, $matches);
-
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-
-    foreach($matches[0] as $sql) {
-        $wpdb->query($sql);
+    if($result) {
+        delete_option('todo_installed');
+    } else {
+        throw new KExceptionError("Failed to run queries from ".__DIR__.'/uninstall.sql');
     }
-
-    delete_option('todo_installed');
 }
