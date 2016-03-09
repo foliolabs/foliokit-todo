@@ -26,8 +26,8 @@ function todo_bootstrap()
     $manager = KObjectManager::getInstance();
     $manager->getObject('lib:object.bootstrapper')
         ->registerComponent('todo', __DIR__, 'todo')
-        //->registerComponent('todo', __DIR__.'/admin', 'admin');
-        ->registerComponent('todo', __DIR__.'/site', 'site');
+        ->registerComponent('todo', __DIR__.'/admin', 'admin');
+        //->registerComponent('todo', __DIR__.'/site', 'site');
 
     /*
     // Use the updater and check releases from GitHub
