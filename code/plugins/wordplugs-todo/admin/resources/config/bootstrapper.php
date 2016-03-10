@@ -9,6 +9,6 @@
 
 return array(
     'identifiers' => array(
-        'com://admin/todo.controller.task' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
+        //'com://admin/todo.controller.task' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
     )
 );

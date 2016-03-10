@@ -17,7 +17,7 @@ return array(
     'identifiers' => array(
 
         'com://site/todo.controller.task' => array(
-            'behaviors' => array('com:activities.controller.behavior.loggable')
+            //'behaviors' => array('com:activities.controller.behavior.loggable')
         ),
 
         'com://site/todo.controller.task' => array(
