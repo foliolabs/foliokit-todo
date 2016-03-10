@@ -24,17 +24,17 @@ defined('KOOWA') or die; ?>
 <? // Form ?>
 <div class="koowa_form">
     <div class="todo_form_layout">
-        <form action="<?= route('id='. $item->id) ?>" method="post" class="-koowa-form">
+        <form action="<?= route('id='. $task->id) ?>" method="post" class="-koowa-form">
 
             <div class="todo_container">
                 <div class="todo_grid">
-                    <div class="todo_grid__item two-thirds">
+                    <div class="todo_grid__task two-thirds">
 
                         <? // Details fieldset ?>
                         <fieldset>
                             <legend><?= translate('Details') ?></legend>
 
-                            <?= import('com://site/todo.item.form_details.html') ?>
+                            <?= import('com://site/todo.task.form_details.html') ?>
 
                         </fieldset>
 
@@ -42,17 +42,17 @@ defined('KOOWA') or die; ?>
                         <fieldset>
                             <legend><?= translate('Description') ?></legend>
 
-                            <?= import('com://site/todo.item.form_description.html') ?>
+                            <?= import('com://site/todo.task.form_description.html') ?>
 
                         </fieldset>
                     </div>
 
-                    <div class="todo_grid__item one-third">
+                    <div class="todo_grid_task one-third">
                         <? // Publishing fieldset ?>
                         <fieldset>
                             <legend><?= translate('Publishing') ?></legend>
 
-                            <?= import('com://site/todo.item.form_publishing.html') ?>
+                            <?= import('com://site/todo.task.form_publishing.html') ?>
 
                         </fieldset>
                     </div>

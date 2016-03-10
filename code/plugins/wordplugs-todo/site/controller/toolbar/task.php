@@ -7,12 +7,12 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
+class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
 {
     protected function _commandNew(KControllerToolbarCommand $command)
     {
-        $command->href  = 'view=item&layout=form';
-        $command->label = 'Add new item';
+        $command->href  = 'view=task&layout=form';
+        $command->label = 'Add new task';
     }
 
     protected function _afterBrowse(KControllerContextInterface $context)
@@ -37,8 +37,8 @@ class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
         $controller = $this->getController();
         $name    = strtolower($controller->getIdentifier()->name);
         $unique  = $controller->getModel()->getState()->isUnique();
-        $title   = $this->getObject('translator')->translate($unique ? 'Edit {item_type}' : 'Create new {item_type}',
-            array('item_type' => $name));
+        $title   = $this->getObject('translator')->translate($unique ? 'Edit {task_type}' : 'Create new {task_type}',
+            array('task_type' => $name));
 
         $this->getCommand('title')->title = $title;
     }

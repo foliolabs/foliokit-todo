@@ -7,7 +7,7 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
+class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
 {
     protected function _afterBrowse(KControllerContextInterface $context)
     {
@@ -18,5 +18,15 @@ class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
         $this->addSeparator();
         $this->addPublish(array('allowed' => $controller->canEdit()));
         $this->addUnpublish(array('allowed' => $controller->canEdit()));
+
+        if($controller->canBrowse()) {
+            $this->addSeparator()->addExport();
+        }
+    }
+
+    protected function _commandExport(KControllerToolbarCommand $command)
+    {
+        $command->attribs->download = $this->getObject('translator')->translate('tasks');
+        $command->attribs->href     = $this->getController()->getView()->getRoute('format=csv', false, false);
     }
 }

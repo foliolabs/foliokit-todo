@@ -7,16 +7,16 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerItem extends ComKoowaControllerModel
+class ComTodoControllerTask extends ComKoowaControllerModel
 {
-	protected function _initialize(KObjectConfig $config)
-	{
-		$config->append(array(
-			'formats'   => array('json')
-		));
+    protected function _initialize(KObjectConfig $config)
+    {
+        $config->append(array(
+            'formats'   => array('json')
+        ));
 
-		parent::_initialize($config);
-	}
+        parent::_initialize($config);
+    }
 
     public function getRequest()
     {

@@ -16,9 +16,9 @@ defined('KOOWA') or die; ?>
 <? // Toolbar ?>
 <ktml:toolbar type="actionbar" title="false" />
 
-<? foreach ($items as $item): ?>
+<? foreach ($tasks as $task): ?>
     <? //Import child template from document view ?>
-    <?= import('com://site/todo.item.default.html', array(
-        'item' => $item,
+    <?= import('com://site/todo.task.default.html', array(
+        'task' => $task,
     )) ?>
 <? endforeach ?>

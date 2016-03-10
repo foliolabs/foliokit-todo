@@ -7,7 +7,7 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoDatabaseTableItems extends KDatabaseTableAbstract
+class ComTodoDatabaseTableTasks extends KDatabaseTableAbstract
 {
     protected function _initialize(KObjectConfig $config)
     {

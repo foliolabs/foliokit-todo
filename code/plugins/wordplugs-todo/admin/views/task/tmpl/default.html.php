@@ -30,7 +30,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls">
                                     <div class="input-group">
                                         <input required class="input-group-form-control" id="todo_form_title" type="text" name="title" maxlength="255"
-                                               value="<?= escape($item->title); ?>" />
+                                               value="<?= escape($task->title); ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ defined('KOOWA') or die; ?>
                                 <label class="control-label" for="todo_form_alias"><?= translate('Alias') ?></label>
                                 <div class="controls">
                                     <input id="todo_form_alias" type="text" class="input-block-level" name="slug" maxlength="255"
-                                           value="<?= escape($item->slug) ?>" />
+                                           value="<?= escape($task->slug) ?>" />
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls">
                                     <?= helper('editor.display', array(
                                         'name'  => 'description',
-                                        'value' => $item->description
+                                        'value' => $task->description
                                     )); ?>
                                 </div>
                             </div>
@@ -62,12 +62,12 @@ defined('KOOWA') or die; ?>
                     <fieldset>
                         <legend><?= translate('Publishing') ?></legend>
                         <div class="todo_grid">
-                            <div class="control-group todo_grid__item one-whole">
+                            <div class="control-group todo_grid__task one-whole">
                                 <label class="control-label"><?= translate('Status'); ?></label>
                                 <div class="controls radio btn-group">
                                     <?= helper('select.booleanlist', array(
                                         'name' => 'enabled',
-                                        'selected' => $item->enabled,
+                                        'selected' => $task->enabled,
                                         'true' => translate('Published'),
                                         'false' => translate('Unpublished')
                                     )); ?>

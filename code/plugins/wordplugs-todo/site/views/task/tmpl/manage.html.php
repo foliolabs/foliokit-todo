@@ -9,26 +9,24 @@
 
 defined('KOOWA') or die;
 
-$show_delete   = $item->canPerform('delete_posts');
-$show_edit     = $item->canPerform('edit_posts');
 $button_size   = 'btn-small';
 ?>
 
 <? // Edit and delete buttons ?>
-<? if (!($item->isLockable() && $item->isLocked()) && ($show_edit || $show_delete)): ?>
+<? if (!($task->isLockable() && $task->isLocked()) && (can('edit') || can('delete'))): ?>
 <div class="btn-toolbar koowa_toolbar">
         <div class="btn-group">
 
         <? // Edit ?>
-        <? if ($show_edit): ?>
-            <a class="btn <?= $button_size ?>" href="<?= route('view=item&id='.$item->id.'&layout=form')?>"><?= translate('Edit'); ?></a>
+        <? if (can('edit')): ?>
+            <a class="btn <?= $button_size ?>" href="<?= route('view=task&id='.$task->id.'&layout=form')?>"><?= translate('Edit'); ?></a>
         <? endif ?>
 
         <? // Delete ?>
-        <? if ($show_delete):
+        <? if (can('delete')):
             $data = array(
                 'method' => 'post',
-                'url'    => (string)route('view=item&id='.$item->id),
+                'url'    => (string)route('view=task&id='.$task->id),
                 'params' => array(
                     'csrf_token' => object('user')->getSession()->getToken(),
                     '_action'    => 'delete',
@@ -36,7 +34,7 @@ $button_size   = 'btn-small';
                 )
             );
 
-            if (parameters()->view == 'item')
+            if (parameters()->view == 'task')
             {
                 if ((string)object('request')->getReferrer()) {
                     $data['params']['_referrer'] = base64_encode((string) object('request')->getReferrer());

@@ -8,12 +8,12 @@
  */
 
 /**
- * Item Controller Permission
+ * Task Controller Permission
  *
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Library\Controller\Permission
  */
-class ComTodoControllerPermissionItem extends KControllerPermissionAbstract
+class ComTodoControllerPermissionTask extends KControllerPermissionAbstract
 {
     /**
      * Permission handler for read actions

@@ -7,29 +7,22 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoDispatcher extends ComKoowaDispatcher
+class ComTodoControllerTask extends ComKoowaControllerModel
 {
+    /**
+     * Initializes the default configuration for the object
+     *
+     * Called from {@link __construct()} as a first step of object instantiation.
+     *
+     * @param   KObjectConfig $config Configuration options
+     * @return void
+     */
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'controller' => 'task',
+            'formats'   => array('csv'),
         ));
 
         parent::_initialize($config);
-    }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        $query = $request->query;
-
-        // Force tmpl=koowa for form layouts
-        if ($query->layout === 'form') {
-            $query->tmpl = 'koowa';
-        }
-
-        return $request;
-
     }
 }

@@ -11,11 +11,11 @@ defined('KOOWA') or die; ?>
 
 <? // Description field ?>
 <div class="todo_grid description_container">
-    <div class="control-group todo_grid__item one-whole">
+    <div class="control-group todo_grid__task one-whole">
         <div class="controls">
             <?= helper('editor.display', array(
                 'name'  => 'description',
-                'value' => $item->description
+                'value' => $task->description
             )); ?>
         </div>
     </div>

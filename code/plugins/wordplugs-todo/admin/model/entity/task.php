@@ -7,7 +7,7 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoModelEntityItem extends KModelEntityRow
+class ComTodoModelEntityTask extends KModelEntityRow
 {
 
 }
