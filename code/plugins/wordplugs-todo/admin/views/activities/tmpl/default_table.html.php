@@ -26,21 +26,21 @@ defined('KOOWA') or die; ?>
             </tr>
             </thead>
             <tbody>
-            <? foreach ($items as $item): ?>
+            <? foreach ($activities as $activity): ?>
                 <tr>
                     <td>
-                        <?= helper('grid.checkbox', array('entity' => $item)) ?>
+                        <?= helper('grid.checkbox', array('entity' => $activity)) ?>
                     </td>
                     <td>
-                        <?= helper('com:activities.activity.activity', array('entity' => $item)) ?>
+                        <?= helper('com:activities.activity.activity', array('entity' => $activity)) ?>
                     </td>
                     <td>
-                        <?= helper('date.humanize', array('date' => $item->created_on)); ?>
+                        <?= helper('date.humanize', array('date' => $activity->created_on)); ?>
                     </td>
                 </tr>
             <? endforeach; ?>
 
-            <? if (!count($items)) : ?>
+            <? if (!count($activities)) : ?>
                 <tr>
                     <td colspan="9">
                         <?= translate('No activities found.') ?>
@@ -52,7 +52,7 @@ defined('KOOWA') or die; ?>
 
     </div><!-- .k-table -->
 
-    <? if (count($items)): ?>
+    <? if (count($activities)): ?>
         <div class="k-table-pagination">
             <?= helper('paginator.pagination') ?>
         </div><!-- .k-table-pagination -->

@@ -32,24 +32,24 @@ defined('KOOWA') or die; ?>
             </tr>
             </thead>
             <tbody>
-            <? foreach ($items as $item): ?>
+            <? foreach ($task as $task): ?>
                 <tr>
                     <td>
-                        <?= helper('grid.checkbox', array('entity' => $item)) ?>
+                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
                     </td>
                     <td>
-                        <a href="<?= route('view=task&id='.$item->id); ?>">
-                            <?= escape($item->title); ?>
+                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                            <?= escape($task->title); ?>
                         </a>
                     </td>
                     <td class="k-nowrap">
-                        <?= helper('grid.publish', array('entity' => $item, 'clickable' => true)) ?>
+                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
                     </td>
                     <td class="k-nowrap">
-                        <?= escape($item->getAuthor()->getName()); ?>
+                        <?= escape($task->getAuthor()->getName()); ?>
                     </td>
                     <td class="k-nowrap">
-                        <?= helper('date.format', array('date' => $item->created_on)); ?>
+                        <?= helper('date.format', array('date' => $task->created_on)); ?>
                     </td>
                 </tr>
             <? endforeach; ?>
@@ -58,7 +58,7 @@ defined('KOOWA') or die; ?>
 
     </div><!-- .k-table -->
 
-    <? if (count($items)): ?>
+    <? if (count($tasks)): ?>
         <div class="k-table-pagination">
             <?= helper('paginator.pagination') ?>
         </div><!-- .k-table-pagination -->

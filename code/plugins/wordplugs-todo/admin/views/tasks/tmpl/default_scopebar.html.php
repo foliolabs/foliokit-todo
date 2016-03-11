@@ -12,13 +12,13 @@ defined('KOOWA') or die; ?>
 <div class="k-scopebar">
 
     <!-- Filters -->
-    <div class="k-scopebar__item k-scopebar__item--fluid">
+    <div class="k-scopebar__task k-scopebar__task--fluid">
 
         <!-- Filter title -->
-        <div class="k-scopebar__item--title"><?= translate('Filter:'); ?></div>
+        <div class="k-scopebar__task--title"><?= translate('Filter:'); ?></div>
 
         <!-- Filters -->
-        <div class="k-scopebar__item--filters">
+        <div class="k-scopebar__task--filters">
             <ul>
                 <li>
                     <button class="k-filter-button" type="button" data-filter-toggle="filter">
@@ -34,7 +34,7 @@ defined('KOOWA') or die; ?>
     </div>
 
     <!-- Search -->
-    <div class="k-scopebar__item k-scopebar__search">
+    <div class="k-scopebar__task k-scopebar__search">
         <?= helper('grid.search', array('submit_on_clear' => true)) ?>
     </div>
 
@@ -42,7 +42,7 @@ defined('KOOWA') or die; ?>
 
 <!-- filter container -->
 <div class="k-filter-container">
-    <div class="k-filter-container__item" data-filter="filter">
+    <div class="k-filter-container__task" data-filter="filter">
         <div class="select2-wrapper select2--filter">
             <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
                 <option selected>--Status--</option>

@@ -12,7 +12,6 @@ defined('KOOWA') or die; ?>
 <?= helper('behavior.ui'); ?>
 <?= helper('behavior.validator'); ?>
 
-
 <!-- Wrapper -->
 <div class="k-wrapper">
 

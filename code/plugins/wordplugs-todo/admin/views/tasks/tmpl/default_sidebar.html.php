@@ -17,7 +17,7 @@ defined('KOOWA') or die; ?>
     </div>
 
     <!-- Filters -->
-    <div class="k-sidebar__item">
+    <div class="k-sidebar__task">
 
         <div class="k-sidebar__header">
             Quick filters:

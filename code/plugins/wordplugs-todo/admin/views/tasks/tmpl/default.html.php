@@ -11,7 +11,6 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.ui'); ?>
 
-
 <!-- Wrapper -->
 <div class="k-wrapper">
 

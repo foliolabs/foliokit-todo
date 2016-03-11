@@ -12,10 +12,10 @@ defined('KOOWA') or die; ?>
 <div class="k-scopebar">
 
     <!-- Filter title -->
-    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
+    <div class="k-scopebar__task k-scopebar__task--title">Filter:</div>
 
     <!-- Filters -->
-    <div class="k-scopebar__item k-scopebar__item--fluid">
+    <div class="k-scopebar__task k-scopebar__task--fluid">
 
         <!-- Filter -->
         <div class="select2-wrapper select2--link-style select2--filter">
@@ -33,7 +33,7 @@ defined('KOOWA') or die; ?>
     </div>
 
     <!-- Search -->
-    <div class="k-scopebar__item k-scopebar__search">
+    <div class="k-scopebar__task k-scopebar__search">
         <?= helper('grid.search', array('submit_on_clear' => true)) ?>
     </div>
 
