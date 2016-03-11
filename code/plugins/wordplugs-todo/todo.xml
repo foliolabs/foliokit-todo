@@ -13,9 +13,9 @@
     <description>Todo plugin for Wordpress build using Wordplugs Framework</description>
 
     <administration>
-        <menu page="todo-items" capability="manage_options" route="component=todo&amp;view=tasks">Todo</menu>
+        <menu page="todo-tasks" capability="manage_options" route="component=todo&amp;view=tasks">Todo</menu>
         <submenu>
-            <menu page="todo-items" capability="manage_options">Tasks</menu>
+            <menu page="todo-tasks" capability="manage_options">Tasks</menu>
             <menu page="todo-activities" capability="manage_options" route="component=todo&amp;view=activities">Activities</menu>
         </submenu>
     </administration>
