@@ -8,7 +8,7 @@
  */
 
 /*
-Plugin Name: Todo
+Plugin Name: Wordplugs-Todo
 Plugin URI: http://github.com/wordplugs/wordplugs-todo
 Description: Todo Plugin for Wordpress
 Author: Johan Janssens and Timble CVBA
@@ -16,6 +16,7 @@ Version: 0.1
 Author URI: http://wordplugs.com/
 */
 defined( 'ABSPATH' ) or die();
+
 
 register_activation_hook(__FILE__, function()
 {
