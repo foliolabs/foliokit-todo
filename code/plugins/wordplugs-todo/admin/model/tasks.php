@@ -15,6 +15,7 @@ class ComTodoModelTasks extends KModelDatabase
 
         $this->getState()
             ->insert('enabled', 'int');
+
     }
 
     protected function _initialize(KObjectConfig $config)
@@ -34,8 +35,7 @@ class ComTodoModelTasks extends KModelDatabase
 
         $state = $this->getState();
 
-        if (!is_null($state->enabled))
-        {
+        if (!is_null($state->enabled)) {
             $query->where('(tbl.enabled IN :enabled)')->bind(array('enabled' => (array) $state->enabled));
         }
     }
