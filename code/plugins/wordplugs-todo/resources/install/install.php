@@ -9,7 +9,7 @@
 
 function todo_install()
 {
-    if(is_plugin_active('koowa/koowa.php'))
+    if(is_plugin_active('wordplugs-framework/wordplugs-framework.php'))
     {
         $installed = get_option('todo_installed');
 
