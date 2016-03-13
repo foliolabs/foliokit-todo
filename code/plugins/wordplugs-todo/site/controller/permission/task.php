@@ -13,7 +13,7 @@
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Library\Controller\Permission
  */
-class ComTodoControllerPermissionTask extends KControllerPermissionAbstract
+class TodoControllerPermissionTask extends KControllerPermissionAbstract
 {
     /**
      * Permission handler for read actions

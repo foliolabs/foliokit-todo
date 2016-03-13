@@ -7,7 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerTask extends ComKoowaControllerModel
+use Wordplugs\Component\Base;
+
+class TodoControllerTask extends Base\ControllerModel
 {
     /**
      * Initializes the default configuration for the object

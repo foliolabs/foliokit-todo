@@ -7,7 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoDispatcher extends ComKoowaDispatcher
+use Wordplugs\Component\Base;
+
+class TodoDispatcher extends Base\Dispatcher
 {
     protected function _initialize(KObjectConfig $config)
     {

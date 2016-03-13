@@ -7,13 +7,15 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
+use Wordplugs\Component\Base;
+
 /**
  *  Todo Dispatcher Router
  *
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Component\Koowa\Dispatcher\Request
  */
-class ComTodoDispatcherRouter extends ComKoowaDispatcherRouterAbstract
+class TodoDispatcherRouter extends Base\DispatcherRouterAbstract
 {
     public function parse(KHttpUrlInterface $url)
     {

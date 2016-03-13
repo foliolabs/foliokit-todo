@@ -7,7 +7,7 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerActivity extends ComActivitiesControllerActivity
+class TodoControllerActivity extends ActivitiesControllerActivity
 {
     /**
      * Initializes the default configuration for the object

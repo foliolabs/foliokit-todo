@@ -7,7 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoTemplateHelperBehavior extends ComKoowaTemplateHelperBehavior
+use Wordplugs\Component\Base;
+
+class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
 {
     /**
      * Makes links delete actions

@@ -7,7 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
+use Wordplugs\Component\Base;
+
+class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
     protected function _afterBrowse(KControllerContextInterface $context)
     {

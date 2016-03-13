@@ -7,7 +7,7 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class ComTodoModelTasks extends KModelDatabase
+class TodoModelTasks extends KModelDatabase
 {
     public function __construct(KObjectConfig $config)
     {

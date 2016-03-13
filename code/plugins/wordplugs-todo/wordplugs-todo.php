@@ -30,7 +30,7 @@ add_action('koowa_before_bootstrap', function()
     $manager = KObjectManager::getInstance();
 
     //Register the components
-    $manager->getObject('lib:object.bootstrapper')
+    $manager->getObject('object.bootstrapper')
         ->registerComponent('todo', __DIR__.'/admin', 'admin',  is_admin())
         ->registerComponent('todo', __DIR__.'/site' , 'site' , !is_admin());
 
