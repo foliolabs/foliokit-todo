@@ -28,13 +28,14 @@ register_activation_hook(__FILE__, function()
 add_action('koowa_before_bootstrap', function()
 {
     $manager = KObjectManager::getInstance();
+
+    //Register the components
     $manager->getObject('lib:object.bootstrapper')
-        ->registerComponent('todo', __DIR__, 'todo')
-        ->registerComponent('todo', __DIR__.'/admin', 'admin')
-        ->registerComponent('todo', __DIR__.'/site', 'site');
+        ->registerComponent('todo', __DIR__.'/admin', 'admin',  is_admin())
+        ->registerComponent('todo', __DIR__.'/site' , 'site' , !is_admin());
 
     /*
-    // Use the updater and check releases from GitHub
+    // Check for updates
     if(is_admin())
     {
         $manager->getObject('com:todo.resources.updater', array(
