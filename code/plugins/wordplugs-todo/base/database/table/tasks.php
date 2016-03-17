@@ -7,9 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class TodoDatabaseTableTasks extends KDatabaseTableAbstract
+class TodoDatabaseTableTasks extends \KDatabaseTableAbstract
 {
-    protected function _initialize(KObjectConfig $config)
+    protected function _initialize(\KObjectConfig $config)
     {
         $config->append(array(
             'behaviors' => array(

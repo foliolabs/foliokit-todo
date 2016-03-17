@@ -17,7 +17,7 @@ use Wordplugs\Component\Base;
  */
 class TodoDispatcherRouter extends Base\DispatcherRouterAbstract
 {
-    public function parse(KHttpUrlInterface $url)
+    public function parse(\KHttpUrlInterface $url)
     {
         $segments = $url->getPath(true);
         $query    = array();
@@ -38,7 +38,7 @@ class TodoDispatcherRouter extends Base\DispatcherRouterAbstract
         return $query;
     }
 
-    public function build(KHttpUrlInterface $url)
+    public function build(\KHttpUrlInterface $url)
     {
         $query    = $url->getQuery(true);
         $segments = array();
