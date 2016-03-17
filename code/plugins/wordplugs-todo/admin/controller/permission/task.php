@@ -7,9 +7,9 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-return array(
+use Wordplugs\Component\Base;
 
-    'identifiers' => array(
-        //'com://admin/todo.controller.task' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
-    )
-);
+class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
+{
+
+}

@@ -1,0 +1,6 @@
+{
+  "identifier": "com://admin/todo",
+  "namespace": "Todo",
+  "extends": "com:base"
+}
+

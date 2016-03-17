@@ -11,7 +11,7 @@ use Wordplugs\Component\Base;
 
 class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
-    protected function _afterBrowse(KControllerContextInterface $context)
+    protected function _afterBrowse(\KControllerContextInterface $context)
     {
         parent::_afterBrowse($context);
 
@@ -26,7 +26,7 @@ class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
         }
     }
 
-    protected function _commandExport(KControllerToolbarCommand $command)
+    protected function _commandExport(\KControllerToolbarCommand $command)
     {
         $command->attribs->download = $this->getObject('translator')->translate('tasks');
         $command->attribs->href     = $this->getController()->getView()->getRoute('format=csv', false, false);
