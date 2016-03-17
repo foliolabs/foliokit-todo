@@ -9,19 +9,12 @@
 
 return array(
 
-    'aliases'    => array(
-        'com://site/todo.database.table.tasks' => 'com://admin/todo.database.table.tasks',
-        'com://site/todo.model.tasks'          => 'com://admin/todo.model.tasks'
-    ),
-
     'identifiers' => array(
 
         'com://site/todo.controller.task' => array(
             //'behaviors' => array('com:activities.controller.behavior.loggable')
+            'formats' => array('schema')
         ),
 
-        'com://site/todo.controller.task' => array(
-            'formats' => array('schema')
-        )
     ),
 );

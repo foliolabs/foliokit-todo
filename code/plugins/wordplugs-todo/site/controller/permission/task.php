@@ -7,13 +7,15 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
+use Wordplugs\Component\Base;
+
 /**
  * Task Controller Permission
  *
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Library\Controller\Permission
  */
-class TodoControllerPermissionTask extends KControllerPermissionAbstract
+class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
 {
     /**
      * Permission handler for read actions
@@ -29,43 +31,5 @@ class TodoControllerPermissionTask extends KControllerPermissionAbstract
         }
 
         return parent::canRead();
-    }
-
-    /**
-     * Permission handler for add actions
-     *
-     * Method returns TRUE iff the controller implements the KControllerModellable interface and the user is authentic
-     * and the account is enabled.
-     *
-     * @return  boolean  Return TRUE if action is permitted. FALSE otherwise.
-     */
-    public function canAdd()
-    {
-        return $this->getUser()->authorise('edit_posts');
-    }
-
-    /**
-     * Permission handler for edit actions
-     *
-     * Method returns TRUE iff the controller implements the KControllerModellable interface and the user is authentic
-     * and the account is enabled.
-     *
-     * @return  boolean  Return TRUE if action is permitted. FALSE otherwise.
-     */
-    public function canEdit()
-    {
-        return $this->getUser()->authorise('edit_posts');
-    }
-
-    /**
-     * Permission handler for delete actions
-     *
-     * Method returns true of the controller implements KControllerModellable interface and the user is authentic.
-     *
-     * @return  boolean  Returns TRUE if action is permitted. FALSE otherwise.
-     */
-    public function canDelete()
-    {
-        return $this->getUser()->authorise('delete_posts');
     }
 }

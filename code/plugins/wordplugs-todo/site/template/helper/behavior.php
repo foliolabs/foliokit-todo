@@ -21,7 +21,7 @@ class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
      */
     public function deletable($config = array())
     {
-        $config = new KObjectConfigJson($config);
+        $config = new \KObjectConfigJson($config);
         $config->append(array(
             'selector' => '.todo-deletable',
             'confirm_message' => $this->getObject('translator')->translate(

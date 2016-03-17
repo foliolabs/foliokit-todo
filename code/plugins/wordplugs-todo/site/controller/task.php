@@ -11,7 +11,7 @@ use Wordplugs\Component\Base;
 
 class TodoControllerTask extends Base\ControllerModel
 {
-    protected function _initialize(KObjectConfig $config)
+    protected function _initialize(\KObjectConfig $config)
     {
         $config->append(array(
             'formats'   => array('json')

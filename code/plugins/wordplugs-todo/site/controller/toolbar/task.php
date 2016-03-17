@@ -11,20 +11,20 @@ use Wordplugs\Component\Base;
 
 class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
-    protected function _commandNew(KControllerToolbarCommand $command)
+    protected function _commandNew(\KControllerToolbarCommand $command)
     {
         $command->href  = 'view=task&layout=form';
         $command->label = 'Add new task';
     }
 
-    protected function _afterBrowse(KControllerContextInterface $context)
+    protected function _afterBrowse(\KControllerContextInterface $context)
     {
         if($this->getController()->canAdd()) {
             $this->addCommand('new');
         }
     }
 
-    protected function _afterRead(KControllerContextInterface $context)
+    protected function _afterRead(\KControllerContextInterface $context)
     {
         $allowed = true;
 

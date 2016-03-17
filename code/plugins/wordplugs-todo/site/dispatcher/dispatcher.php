@@ -11,7 +11,7 @@ use Wordplugs\Component\Base;
 
 class TodoDispatcher extends Base\Dispatcher
 {
-    protected function _initialize(KObjectConfig $config)
+    protected function _initialize(\KObjectConfig $config)
     {
         $config->append(array(
             'controller' => 'task',
