@@ -20,25 +20,25 @@ defined( 'ABSPATH' ) or die();
 
 register_activation_hook(__FILE__, function()
 {
-    /*KObjectManager::getInstance()->getObject('com:todo.installer', array(
+    /*KObjectManager::getInstance()->getObject('com://admin/todo.installer', array(
         'basepath' => __DIR__
     ))->install();*/
 });
 
-add_action('koowa_before_bootstrap', function()
+add_action('wordplugs_before_bootstrap', function()
 {
     $manager = KObjectManager::getInstance();
 
     //Register the components
     $manager->getObject('object.bootstrapper')
-        ->registerComponent('todo', __DIR__.'/admin', 'admin',  is_admin())
-        ->registerComponent('todo', __DIR__.'/site' , 'site' , !is_admin());
+        ->registerComponent(__DIR__.'/admin', is_admin(), array(__DIR__.'/base'))
+        ->registerComponent(__DIR__.'/site', !is_admin(), array(__DIR__.'/base'));
 
     /*
     // Check for updates
     if(is_admin())
     {
-        $manager->getObject('com:todo.resources.updater', array(
+        $manager->getObject('com://admin/todo.resources.updater', array(
             'plugin_file'  => __FILE__,
             'releases_url' => 'https://api.github.com/repos/wordplugs/wordplugs-todo/releases'
         ));
