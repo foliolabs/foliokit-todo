@@ -6,8 +6,9 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
+use Kodekit\Library;
 
-class TodoModelEntityTask extends \KModelEntityRow
+class TodoModelEntityTask extends Library\ModelEntityRow
 {
 
 }

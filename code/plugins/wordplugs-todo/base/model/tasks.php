@@ -7,9 +7,11 @@
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
 
-class TodoModelTasks extends \KModelDatabase
+use Kodekit\Library;
+
+class TodoModelTasks extends Library\ModelDatabase
 {
-    public function __construct(\KObjectConfig $config)
+    public function __construct(Library\ObjectConfig $config)
     {
         parent::__construct($config);
 
@@ -18,7 +20,7 @@ class TodoModelTasks extends \KModelDatabase
 
     }
 
-    protected function _initialize(\KObjectConfig $config)
+    protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'behaviors' => array(
@@ -29,7 +31,7 @@ class TodoModelTasks extends \KModelDatabase
         parent::_initialize($config);
     }
 
-    protected function _buildQueryWhere(\KDatabaseQueryInterface $query)
+    protected function _buildQueryWhere(Library\DatabaseQueryInterface $query)
     {
         parent::_buildQueryWhere($query);
 

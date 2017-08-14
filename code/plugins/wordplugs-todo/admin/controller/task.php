@@ -8,6 +8,7 @@
  */
 
 use Wordplugs\Component\Base;
+use Kodekit\Library;
 
 class TodoControllerTask extends Base\ControllerModel
 {
@@ -16,10 +17,10 @@ class TodoControllerTask extends Base\ControllerModel
      *
      * Called from {@link __construct()} as a first step of object instantiation.
      *
-     * @param  \KObjectConfig $config Configuration options
+     * @param  Library\ObjectConfig $config Configuration options
      * @return void
      */
-    protected function _initialize(\KObjectConfig $config)
+    protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'formats'   => array('csv'),

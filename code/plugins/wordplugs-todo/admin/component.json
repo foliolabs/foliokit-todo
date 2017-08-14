@@ -1,6 +1,7 @@
 {
-  "identifier": "com://admin/todo",
-  "namespace": "Todo",
-  "extends": "com:base"
+    "bootstrap" : {
+        "identifier": "com://admin/todo",
+        "namespace": "Todo",
+        "extends": "com:base"
+    }
 }
-

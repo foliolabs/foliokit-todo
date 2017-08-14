@@ -27,10 +27,8 @@ register_activation_hook(__FILE__, function()
 
 add_action('wordplugs_before_bootstrap', function()
 {
-    $manager = KObjectManager::getInstance();
-
     //Register the components
-    $manager->getObject('object.bootstrapper')
+    Kodekit::getObject('object.bootstrapper')
         ->registerComponent(__DIR__.'/admin', is_admin(), array(__DIR__.'/base'))
         ->registerComponent(__DIR__.'/site', !is_admin(), array(__DIR__.'/base'));
 

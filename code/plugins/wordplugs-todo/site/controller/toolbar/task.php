@@ -8,23 +8,24 @@
  */
 
 use Wordplugs\Component\Base;
+use Kodekit\Library;
 
 class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
-    protected function _commandNew(\KControllerToolbarCommand $command)
+    protected function _commandNew(Library\ControllerToolbarCommand $command)
     {
         $command->href  = 'view=task&layout=form';
         $command->label = 'Add new task';
     }
 
-    protected function _afterBrowse(\KControllerContextInterface $context)
+    protected function _afterBrowse(Library\ControllerContextInterface $context)
     {
         if($this->getController()->canAdd()) {
             $this->addCommand('new');
         }
     }
 
-    protected function _afterRead(\KControllerContextInterface $context)
+    protected function _afterRead(Library\ControllerContextInterface $context)
     {
         $allowed = true;
 

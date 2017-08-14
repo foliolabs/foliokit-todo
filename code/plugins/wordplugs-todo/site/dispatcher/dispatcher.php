@@ -8,10 +8,11 @@
  */
 
 use Wordplugs\Component\Base;
+use Kodekit\Library;
 
 class TodoDispatcher extends Base\Dispatcher
 {
-    protected function _initialize(\KObjectConfig $config)
+    protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'controller' => 'task',

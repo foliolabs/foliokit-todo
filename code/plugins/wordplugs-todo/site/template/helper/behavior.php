@@ -6,8 +6,8 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
-
 use Wordplugs\Component\Base;
+use Kodekit\Library;
 
 class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
 {
@@ -21,7 +21,7 @@ class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
      */
     public function deletable($config = array())
     {
-        $config = new \KObjectConfigJson($config);
+        $config = new Library\ObjectConfigJson($config);
         $config->append(array(
             'selector' => '.todo-deletable',
             'confirm_message' => $this->getObject('translator')->translate(

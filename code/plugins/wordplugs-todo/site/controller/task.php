@@ -8,10 +8,11 @@
  */
 
 use Wordplugs\Component\Base;
+use Kodekit\Library;
 
 class TodoControllerTask extends Base\ControllerModel
 {
-    protected function _initialize(\KObjectConfig $config)
+    protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'formats'   => array('json')

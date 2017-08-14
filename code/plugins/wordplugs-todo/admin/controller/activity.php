@@ -6,6 +6,7 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/wordplugs/wordplugs-todo for the canonical source repository
  */
+use Kodekit\Library;
 
 class TodoControllerActivity extends ActivitiesControllerActivity
 {
@@ -17,7 +18,7 @@ class TodoControllerActivity extends ActivitiesControllerActivity
      * @param  \KObjectConfig $config Configuration options
      * @return void
      */
-    protected function _initialize(\KObjectConfig $config)
+    protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'toolbars'   => array('menubar', 'activity'),
