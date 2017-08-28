@@ -7,7 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-defined('KOOWA') or die; ?>
+defined('KODEKIT') or die; ?>
 
 <?= helper('bootstrap.load', array('javascript' => true)); ?>
 <?= helper('behavior.koowa'); ?>

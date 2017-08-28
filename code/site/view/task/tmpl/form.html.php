@@ -7,7 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-defined('KOOWA') or die; ?>
+defined('KODEKIT') or die; ?>
 
 <ktml:style src="assets://css/koowa.css" />
 <ktml:style src="assets://todo/css/site.css" />

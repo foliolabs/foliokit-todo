@@ -7,7 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-defined('KOOWA') or die; ?>
+defined('KODEKIT') or die; ?>
 
 <? // Title field ?>
 <div class="todo_grid">
