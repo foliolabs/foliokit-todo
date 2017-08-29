@@ -27,7 +27,7 @@ register_activation_hook(__FILE__, function()
 
 add_action('foliokit_before_bootstrap', function()
 {
-    foliokit_register_component(__DIR__);
+    foliokit_register_plugin(__FILE__);
 
     /*
     // Check for updates
