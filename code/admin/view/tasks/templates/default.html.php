@@ -21,7 +21,7 @@ defined('KODEKIT') or die; ?>
         <div class="k-content-wrapper">
 
             <!-- Sidebar -->
-            <?= import('default_sidebar.html'); ?>
+            <?='' /* import('default_sidebar.html'); */ ?>
 
             <!-- Content -->
             <div class="k-content k-js-content">

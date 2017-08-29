@@ -21,6 +21,9 @@ defined('KODEKIT') or die; ?>
                 <th>
                     <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title', 'direction' => 'asc')) ?>
                 </th>
+                <th width="5%" data-hide="phone,tablet">
+                    <?= translate('Status') ?>
+                </th>
                 <th width="5%" data-hide="phone,tablet,desktop">
                     <?= translate('Owner')?>
                 </th>
