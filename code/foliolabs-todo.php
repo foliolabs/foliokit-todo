@@ -20,17 +20,14 @@ defined( 'ABSPATH' ) or die();
 
 register_activation_hook(__FILE__, function()
 {
-    /*KObjectManager::getInstance()->getObject('com://admin/todo.installer', array(
+    KObjectManager::getInstance()->getObject('com://admin/todo.installer', array(
         'basepath' => __DIR__
-    ))->install();*/
+    ))->install();
 });
 
 add_action('foliokit_before_bootstrap', function()
 {
-    //Register the components
-    Kodekit::getObject('object.bootstrapper')
-        ->registerComponent(__DIR__.'/admin', is_admin(), array(__DIR__.'/base'))
-        ->registerComponent(__DIR__.'/site', !is_admin(), array(__DIR__.'/base'));
+    foliokit_register_component(__DIR__);
 
     /*
     // Check for updates
