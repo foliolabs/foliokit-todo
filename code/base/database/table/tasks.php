@@ -6,9 +6,11 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
+
+namespace Todo;
 use Kodekit\Library;
 
-class TodoDatabaseTableTasks extends Library\DatabaseTableAbstract
+class DatabaseTableTasks extends Library\DatabaseTableAbstract
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

@@ -7,10 +7,11 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo\Site;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoControllerTask extends Base\ControllerModel
+class ControllerTask extends Base\ControllerModel
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

@@ -7,6 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
@@ -16,7 +17,7 @@ use Kodekit\Library;
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Component\Koowa\Dispatcher\Request
  */
-class TodoDispatcherRouter extends Base\DispatcherRouterAbstract
+class DispatcherRouter extends Base\DispatcherRouterAbstract
 {
     public function parse(Library\HttpUrlInterface $url)
     {

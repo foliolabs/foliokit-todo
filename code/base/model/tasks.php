@@ -7,9 +7,10 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo;
 use Kodekit\Library;
 
-class TodoModelTasks extends Library\ModelDatabase
+class ModelTasks extends Library\ModelDatabase
 {
     public function __construct(Library\ObjectConfig $config)
     {

@@ -7,10 +7,11 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo\Site;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
+class ControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
     protected function _commandNew(Library\ControllerToolbarCommand $command)
     {
@@ -18,14 +19,14 @@ class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
         $command->label = 'Add new task';
     }
 
-    protected function _afterBrowse(Library\ControllerContextInterface $context)
+    protected function _afterBrowse(Library\ControllerContext $context)
     {
         if($this->getController()->canAdd()) {
             $this->addCommand('new');
         }
     }
 
-    protected function _afterRead(Library\ControllerContextInterface $context)
+    protected function _afterRead(Library\ControllerContext $context)
     {
         $allowed = true;
 

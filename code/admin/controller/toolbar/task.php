@@ -7,12 +7,13 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo\Admin;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
+class ControllerToolbarTask extends Base\ControllerToolbarActionbar
 {
-    protected function _afterBrowse(Library\ControllerContextInterface $context)
+    protected function _afterBrowse(Library\ControllerContext $context)
     {
         parent::_afterBrowse($context);
 
@@ -23,7 +24,8 @@ class TodoControllerToolbarTask extends Base\ControllerToolbarActionbar
         $this->addUnpublish(array('allowed' => $controller->canEdit()));
 
         if($controller->canBrowse()) {
-            $this->addSeparator()->addExport();
+            $this->addSeparator();
+            $this->addExport();
         }
     }
 

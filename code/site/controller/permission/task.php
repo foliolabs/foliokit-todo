@@ -7,6 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Todo\Site;
 use Foliolabs\Component\Base;
 
 /**
@@ -15,7 +16,7 @@ use Foliolabs\Component\Base;
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Library\Controller\Permission
  */
-class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
+class ControllerPermissionTask extends Base\ControllerPermissionAbstract
 {
     /**
      * Permission handler for read actions

@@ -1,0 +1,7 @@
+{
+    "bootstrap" : {
+        "identifier": "com:todo",
+        "namespace": "Todo",
+        "extends": "com:base"
+    }
+}

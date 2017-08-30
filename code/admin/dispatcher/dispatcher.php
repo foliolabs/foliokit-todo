@@ -11,22 +11,25 @@ namespace Todo\Admin;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class ControllerTask extends Base\ControllerModel
+class Dispatcher extends Base\Dispatcher
 {
-    /**
-     * Initializes the default configuration for the object
-     *
-     * Called from {@link __construct()} as a first step of object instantiation.
-     *
-     * @param  Library\ObjectConfig $config Configuration options
-     * @return void
-     */
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-            'formats'   => array('csv'),
+            'controller' => 'task',
         ));
 
         parent::_initialize($config);
+    }
+
+    protected function _resolveRequest(Library\DispatcherContext $context)
+    {
+        parent::_resolveRequest($context);
+
+        /*$context->getRequest()->getHeaders()->set('X-Flush-Response', 1);
+
+        if($context->request->query->get('view', 'cmd') === 'task') {
+            $context->getRequest()->getHeaders()->set('X-Flush-Response', 1);
+        }*/
     }
 }

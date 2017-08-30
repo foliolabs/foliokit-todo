@@ -40,7 +40,7 @@ defined('KODEKIT') or die; ?>
                     </td>
                     <td class="k-table-data--toggle"></td>
                     <td width="90%" class="k-table-data--ellipsis">
-                        <a class="k-table__item-level__icon-item" data-k-tooltip='{"container":".k-ui-container","delay":{"show":500,"hide":50}}' data-original-title="<?= translate('Edit {title}', array('title' => escape($task->title))); ?>" href="<?= route('view=task&id='.$task->id)?>">
+                        <a data-k-tooltip='{"container":".k-ui-container","delay":{"show":500,"hide":50}}' data-original-title="<?= translate('Edit {title}', array('title' => escape($task->title))); ?>" href="<?= route('view=task&id='.$task->id)?>">
                             <?= escape($task->title) ?>
                         </a>
                     </td>
