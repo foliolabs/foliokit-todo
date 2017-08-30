@@ -15,14 +15,13 @@ function todo_install()
 
         if(!$installed)
         {
-            $result = KObjectManager::getInstance()
-                        ->getObject('lib:database.adapter.mysqli')
-                        ->execute(file_get_contents(__DIR__.'/install.sql'), KDatabase::MULTI_QUERY);
+            $result = \Kodekit::getObject('database.driver.mysqli')
+                        ->execute(file_get_contents(__DIR__.'/install.sql'), \Kodekit\Library\Database::MULTI_QUERY);
 
             if($result) {
                 add_option('todo_installed', true);
             } else {
-                throw new KExceptionError("Failed to run queries from ".__DIR__.'/install.sql');
+                throw new \RuntimeException("Failed to run queries from ".__DIR__.'/install.sql');
             }
         }
     }
