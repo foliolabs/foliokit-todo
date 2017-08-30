@@ -18,11 +18,9 @@ Author URI: http://foliolabs.com/
 defined( 'ABSPATH' ) or die();
 
 
-register_activation_hook(__FILE__, function()
-{
-    KObjectManager::getInstance()->getObject('com://admin/todo.installer', array(
-        'basepath' => __DIR__
-    ))->install();
+register_activation_hook(__FILE__, function() {
+    require_once __DIR__.'/base/resources/install/install.php';
+    todo_install();
 });
 
 add_action('foliokit_before_bootstrap', function()
