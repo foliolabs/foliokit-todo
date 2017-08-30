@@ -6,7 +6,7 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
-namespace Todo;
+namespace Foliolabs\Todo;
 use Kodekit\Library;
 
 class ModelEntityTask extends Library\ModelEntityRow

@@ -6,10 +6,11 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
+namespace Foliolabs\Todo\Site;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
+class TemplateHelperBehavior extends Base\TemplateHelperBehavior
 {
     /**
      * Makes links delete actions

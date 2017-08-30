@@ -7,7 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-namespace Todo;
+namespace Foliolabs\Todo;
 use Kodekit\Library;
 
 class DatabaseTableTasks extends Library\DatabaseTableAbstract

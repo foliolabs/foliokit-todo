@@ -7,7 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-namespace Todo\Admin;
+namespace Foliolabs\Todo\Admin;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
