@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.0">
+    <name>Todo</name>
+    <version>1.0</version>
+    <date>March 2015</date>
+    <author>
+        <name>Foliolabs</name>
+        <email>info@foliolabs.com</email>
+        <link>www.v.com</link>
+    </author>
+    <copyright>Copyright (C) 2015 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
+    <license>http://www.gnu.org/licenses/gpl.html GNU/GPL v3</license>
+    <description>Todo plugin for Wordpress built using FolioKit</description>
+
+    <administration>
+        <menu page="todo-tasks" capability="manage_options" route="component=todo&amp;view=tasks">Todo</menu>
+        <submenu>
+            <menu page="todo-tasks" capability="manage_options">Tasks</menu>
+            <menu page="todo-activities" capability="manage_options" route="component=todo&amp;view=activities">Activities</menu>
+        </submenu>
+    </administration>
+</extension>
