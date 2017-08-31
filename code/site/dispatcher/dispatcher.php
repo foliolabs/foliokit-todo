@@ -26,9 +26,7 @@ class Dispatcher extends Base\Dispatcher
     {
         parent::_resolveRequest($context);
 
-        $context->getRequest()->getHeaders()->set('X-Flush-Response', 1);
-
-        if($context->request->query->get('view', 'cmd') === 'task') {
+        if($context->request->query->get('layout', 'cmd') === 'form') {
             $context->getRequest()->getHeaders()->set('X-Flush-Response', 1);
         }
     }

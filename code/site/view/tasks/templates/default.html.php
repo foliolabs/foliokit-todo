@@ -9,8 +9,8 @@
 
 defined('KODEKIT') or die; ?>
 
-<?= helper('bootstrap.load'); ?>
-<?= helper('behavior.koowa');?>
+<?= helper('behavior.bootstrap'); ?>
+<?= helper('behavior.kodekit');?>
 <?= helper('behavior.modal');?>
 
 <? // Toolbar ?>
@@ -18,5 +18,5 @@ defined('KODEKIT') or die; ?>
 
 <? foreach ($tasks as $task): ?>
     <? //Import child template from document view ?>
-    <?= import('com://site/todo.task.default.html', array('task' => $task)) ?>
+    <?= import('com://site/todo/task/default.html', array('task' => $task)) ?>
 <? endforeach ?>

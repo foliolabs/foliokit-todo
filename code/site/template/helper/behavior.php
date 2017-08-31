@@ -30,7 +30,7 @@ class TemplateHelperBehavior extends Base\TemplateHelperBehavior
             ),
         ));
 
-        $html = $this->koowa();
+        $html = $this->kodekit();
 
         $signature = md5(serialize(array($config->selector,$config->confirm_message)));
         if (!isset(self::$_loaded[$signature])) {

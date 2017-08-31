@@ -18,8 +18,6 @@ class ControllerToolbarWordpress extends Library\Object
         parent::__construct($config);
 
         $router = function($query) {
-            do_action('foliokit_before_route');
-
             $request = $this->getObject('request');
 
             if($request->getQuery()->has('component')) {
@@ -27,8 +25,6 @@ class ControllerToolbarWordpress extends Library\Object
             } else {
                 wp_redirect((string)$request->getUrl()->setQuery($query));
             }
-
-            do_action('foliokit_after_route');
         };
 
         // Add the commands

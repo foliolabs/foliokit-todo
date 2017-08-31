@@ -34,6 +34,6 @@ defined('KODEKIT') or die; ?>
     </div>
 
     <? // Edit area | Import partial template from task view ?>
-    <?= import('com://site/todo.task.manage.html', array('task' => $task)) ?>
+    <?= import('com://site/todo/task/manage.html', array('task' => $task)) ?>
 
 </div>
