@@ -17,6 +17,20 @@ class ControllerToolbarWordpress extends Library\Object
     {
         parent::__construct($config);
 
+        $router = function($query) {
+            do_action('foliokit_before_route');
+
+            $request = $this->getObject('request');
+
+            if($request->getQuery()->has('component')) {
+                echo $this->getObject('response')->getContent();
+            } else {
+                wp_redirect((string)$request->getUrl()->setQuery($query));
+            }
+
+            do_action('foliokit_after_route');
+        };
+
         // Add the commands
         foreach ($config->commands as $menu)
         {
@@ -29,7 +43,7 @@ class ControllerToolbarWordpress extends Library\Object
                 $menu->title,
                 $menu->permission,
                 $menu->page,
-                function () use ($query) { foliokit_route($query); }
+                function () use ($query, $router) { $router($query); }
             );
 
             if ($menu->commands)
