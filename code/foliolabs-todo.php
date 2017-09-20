@@ -22,7 +22,6 @@ register_activation_hook(__FILE__, function() {
     require_once __DIR__.'/base/resources/install/install.php';
     todo_install();
 });
-
 add_action('foliokit_before_bootstrap', function()
 {
     foliokit_register_plugin(__FILE__);
