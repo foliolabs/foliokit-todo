@@ -29,7 +29,7 @@ $button_size   = 'btn-small';
                 'url'    => (string)route('view=task&id='.$task->id),
                 'params' => array(
                     'csrf_token' => object('user')->getSession()->getToken(),
-                    '_action'    => 'delete',
+                    '_method'    => 'delete',
                     '_referrer'  => base64_encode((string) object('request')->getUrl())
                 )
             );
