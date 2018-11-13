@@ -11,13 +11,13 @@ namespace Foliolabs\Todo\Admin;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class Dispatcher extends Base\Dispatcher
+class ViewTaskHtml extends Base\ViewHtml
 {
     protected function _initialize(Library\ObjectConfig $config)
     {
-        $config->append(array(
-            'controller' => 'task',
-        ));
+        $config->append([
+            'decorator' => 'kodekit',
+        ]);
 
         parent::_initialize($config);
     }
