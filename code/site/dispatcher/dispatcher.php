@@ -21,13 +21,4 @@ class Dispatcher extends Base\Dispatcher
 
         parent::_initialize($config);
     }
-
-    protected function _resolveRequest(Library\DispatcherContext $context)
-    {
-        parent::_resolveRequest($context);
-
-        if($context->request->query->get('layout', 'cmd') === 'form') {
-            $context->getRequest()->getHeaders()->set('X-Flush-Response', 1);
-        }
-    }
 }

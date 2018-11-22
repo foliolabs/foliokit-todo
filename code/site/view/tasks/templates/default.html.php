@@ -9,9 +9,8 @@
 
 defined('KODEKIT') or die; ?>
 
+<?= helper('ui.load'); ?>
 <?= helper('behavior.bootstrap'); ?>
-<?= helper('behavior.kodekit');?>
-<?= helper('behavior.modal');?>
 
 <? // Toolbar ?>
 <ktml:toolbar type="actionbar" title="false" />

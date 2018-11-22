@@ -9,6 +9,8 @@
 
 defined('KODEKIT') or die; ?>
 
+<?= helper('ui.load'); ?>
+
 <div class="todo_task">
     <h4 class="koowa_header">
         <? // Header title ?>
