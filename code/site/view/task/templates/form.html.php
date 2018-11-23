@@ -9,12 +9,7 @@
 
 defined('KODEKIT') or die; ?>
 
-<ktml:style src="assets://css/koowa.css" />
-<ktml:style src="assets://todo/css/site.css" />
-
-<?= helper('bootstrap.load'); ?>
-<?= helper('behavior.koowa'); ?>
-<?= helper('behavior.validator'); ?>
+<?= helper('ui.load'); ?>
 
 <? // Toolbar ?>
 <div class="koowa_toolbar">
@@ -34,7 +29,7 @@ defined('KODEKIT') or die; ?>
                         <fieldset>
                             <legend><?= translate('Details') ?></legend>
 
-                            <?= import('com://site/todo.task.form_details.html') ?>
+                            <?= import('com://site/todo/task/form_details.html') ?>
 
                         </fieldset>
 
@@ -42,7 +37,7 @@ defined('KODEKIT') or die; ?>
                         <fieldset>
                             <legend><?= translate('Description') ?></legend>
 
-                            <?= import('com://site/todo.task.form_description.html') ?>
+                            <?= import('com://site/todo/task/form_description.html') ?>
 
                         </fieldset>
                     </div>
@@ -52,7 +47,7 @@ defined('KODEKIT') or die; ?>
                         <fieldset>
                             <legend><?= translate('Publishing') ?></legend>
 
-                            <?= import('com://site/todo.task.form_publishing.html') ?>
+                            <?= import('com://site/todo/task/form_publishing.html') ?>
 
                         </fieldset>
                     </div>
