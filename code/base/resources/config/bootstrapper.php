@@ -12,7 +12,7 @@ return [
     'identifiers' => [
         'com:base.controller.page' => [
             'shortcodes' => [
-                'com:base.shortcode' => ['code' => 'foliolabs-todo', 'attributes' => ['component' => 'todo']]
+                'com:todo.shortcode.todo'
             ]
         ]
     ]
