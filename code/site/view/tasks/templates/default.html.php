@@ -10,7 +10,6 @@
 defined('KODEKIT') or die; ?>
 
 <?= helper('ui.load'); ?>
-<?= helper('behavior.bootstrap'); ?>
 
 <? // Toolbar ?>
 <ktml:toolbar type="actionbar" title="false" />

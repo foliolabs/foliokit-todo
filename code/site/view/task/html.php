@@ -16,7 +16,7 @@ class ViewTaskHtml extends Base\ViewHtml
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append([
-            'decorator'  => $config->layout === 'form' ? 'kodekit' : 'joomla'
+            'decorator'  => $config->layout === 'form' ? 'kodekit' : 'wordpress'
         ]);
 
         parent::_initialize($config);
