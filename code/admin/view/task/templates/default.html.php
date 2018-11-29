@@ -70,10 +70,7 @@ defined('KODEKIT') or die; ?>
                                     </div>
 
                                     <div class="k-form-group">
-                                        <?= helper('editor.display', array(
-                                            'name' => 'description',
-                                            'value' => $task->description
-                                        )); ?>
+                                        <textarea name="description" style="width: 100%; height: 250px"><?= $task->description ?></textarea>
                                     </div>
 
                                 </fieldset>

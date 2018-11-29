@@ -25,7 +25,6 @@ class DatabaseTableTasks extends Library\DatabaseTableAbstract
             ),
             'filters' => array(
                 'title'        => array('trim'),
-                'slug'         => array('trim'),
                 'description'  => array('trim', 'html')
             )
         ));
