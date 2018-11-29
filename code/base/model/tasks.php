@@ -38,7 +38,7 @@ class ModelTasks extends Library\ModelDatabase
 
         $state = $this->getState();
 
-        if (!is_null($state->enabled)) {
+        if (is_numeric($state->enabled)) {
             $query->where('(tbl.enabled IN :enabled)')->bind(array('enabled' => (array) $state->enabled));
         }
     }
