@@ -28,7 +28,7 @@ class ControllerPermissionTask extends Base\ControllerPermissionAbstract
     public function canRead()
     {
         if($this->getRequest()->query->get('layout', 'cmd') == 'form') {
-            return $this->getUser()->authorise('edit_posts');
+            return $this->canEdit();
         }
 
         return parent::canRead();

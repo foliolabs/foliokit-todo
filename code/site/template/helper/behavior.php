@@ -43,7 +43,7 @@ class TemplateHelperBehavior extends Base\TemplateHelperBehavior
                     var target = $(event.target);
 
                     if (!target.hasClass('disabled') && confirm('{$config->confirm_message}')) {
-                        new Koowa.Form($.parseJSON(target.prop('rel'))).submit();
+                        new Kodekit.Form($.parseJSON(target.prop('rel'))).submit();
                     }
                 });
             });
