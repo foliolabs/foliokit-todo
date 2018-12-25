@@ -7,10 +7,11 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Foliolabs\Todo\Site;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoDispatcher extends Base\Dispatcher
+class Dispatcher extends Base\Dispatcher
 {
     protected function _initialize(Library\ObjectConfig $config)
     {
@@ -19,20 +20,5 @@ class TodoDispatcher extends Base\Dispatcher
         ));
 
         parent::_initialize($config);
-    }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        $query = $request->query;
-
-        // Force tmpl=koowa for form layouts
-        if ($query->layout === 'form') {
-            $query->tmpl = 'koowa';
-        }
-
-        return $request;
-
     }
 }

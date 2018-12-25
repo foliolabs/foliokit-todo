@@ -1,7 +1,7 @@
 {
     "bootstrap" : {
         "identifier": "com://site/todo",
-        "namespace": "Todo",
-        "extends": "com:base"
+        "namespace": "Foliolabs\\Todo\\Site",
+        "extends": "com:todo"
     }
 }

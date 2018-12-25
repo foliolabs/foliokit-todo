@@ -9,14 +9,12 @@
 
 defined('KODEKIT') or die; ?>
 
-<?= helper('bootstrap.load'); ?>
-<?= helper('behavior.koowa');?>
-<?= helper('behavior.modal');?>
+<?= helper('ui.load'); ?>
 
 <? // Toolbar ?>
 <ktml:toolbar type="actionbar" title="false" />
 
 <? foreach ($tasks as $task): ?>
     <? //Import child template from document view ?>
-    <?= import('com://site/todo.task.default.html', array('task' => $task)) ?>
+    <?= import('com://site/todo/task/default.html', array('task' => $task)) ?>
 <? endforeach ?>

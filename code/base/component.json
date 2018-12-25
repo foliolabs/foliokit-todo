@@ -1,0 +1,7 @@
+{
+    "bootstrap" : {
+        "identifier": "com:todo",
+        "namespace": "Foliolabs\\Todo",
+        "extends": "com:base"
+    }
+}

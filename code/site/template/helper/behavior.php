@@ -6,10 +6,11 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
+namespace Foliolabs\Todo\Site;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
+class TemplateHelperBehavior extends Base\TemplateHelperBehavior
 {
     /**
      * Makes links delete actions
@@ -29,7 +30,7 @@ class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
             ),
         ));
 
-        $html = $this->koowa();
+        $html = $this->kodekit();
 
         $signature = md5(serialize(array($config->selector,$config->confirm_message)));
         if (!isset(self::$_loaded[$signature])) {
@@ -42,7 +43,7 @@ class TodoTemplateHelperBehavior extends Base\TemplateHelperBehavior
                     var target = $(event.target);
 
                     if (!target.hasClass('disabled') && confirm('{$config->confirm_message}')) {
-                        new Koowa.Form($.parseJSON(target.prop('rel'))).submit();
+                        new Kodekit.Form($.parseJSON(target.prop('rel'))).submit();
                     }
                 });
             });

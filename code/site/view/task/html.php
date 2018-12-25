@@ -7,9 +7,18 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Foliolabs\Todo\Site;
 use Foliolabs\Component\Base;
+use Kodekit\Library;
 
-class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
+class ViewTaskHtml extends Base\ViewHtml
 {
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append([
+            'decorator'  => $config->layout === 'form' ? 'kodekit' : 'wordpress'
+        ]);
 
+        parent::_initialize($config);
+    }
 }

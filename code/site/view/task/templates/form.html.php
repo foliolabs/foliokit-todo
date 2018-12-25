@@ -9,14 +9,4 @@
 
 defined('KODEKIT') or die; ?>
 
-<? // Description field ?>
-<div class="todo_grid description_container">
-    <div class="control-group todo_grid__task one-whole">
-        <div class="controls">
-            <?= helper('editor.display', array(
-                'name'  => 'description',
-                'value' => $task->description
-            )); ?>
-        </div>
-    </div>
-</div>
+<?= import('com://admin/todo/task/default.html'); ?>

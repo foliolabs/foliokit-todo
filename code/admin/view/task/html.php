@@ -6,9 +6,19 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
-namespace Foliolabs\Todo;
+
+namespace Foliolabs\Todo\Admin;
+use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class ModelEntityTask extends Library\ModelEntityRow
+class ViewTaskHtml extends Base\ViewHtml
 {
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append([
+            'decorator' => 'kodekit',
+        ]);
+
+        parent::_initialize($config);
+    }
 }

@@ -7,6 +7,7 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Foliolabs\Todo\Site;
 use Foliolabs\Component\Base;
 
 /**
@@ -15,7 +16,7 @@ use Foliolabs\Component\Base;
  * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Koowa\Library\Controller\Permission
  */
-class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
+class ControllerPermissionTask extends Base\ControllerPermissionAbstract
 {
     /**
      * Permission handler for read actions
@@ -27,7 +28,7 @@ class TodoControllerPermissionTask extends Base\ControllerPermissionAbstract
     public function canRead()
     {
         if($this->getRequest()->query->get('layout', 'cmd') == 'form') {
-            return $this->getUser()->authorise('edit_posts');
+            return $this->canEdit();
         }
 
         return parent::canRead();

@@ -9,6 +9,8 @@
 
 defined('KODEKIT') or die; ?>
 
+<?= helper('ui.load'); ?>
+
 <div class="todo_task">
     <h4 class="koowa_header">
         <? // Header title ?>
@@ -34,6 +36,6 @@ defined('KODEKIT') or die; ?>
     </div>
 
     <? // Edit area | Import partial template from task view ?>
-    <?= import('com://site/todo.task.manage.html', array('task' => $task)) ?>
+    <?= import('com://site/todo/task/manage.html', array('task' => $task)) ?>
 
 </div>

@@ -6,9 +6,11 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
+
+namespace Foliolabs\Todo\Admin;
 use Kodekit\Library;
 
-class TodoControllerActivity extends ActivitiesControllerActivity
+class ControllerActivity extends ActivitiesControllerActivity
 {
     /**
      * Initializes the default configuration for the object

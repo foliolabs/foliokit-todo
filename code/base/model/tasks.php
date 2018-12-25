@@ -7,9 +7,10 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
+namespace Foliolabs\Todo;
 use Kodekit\Library;
 
-class TodoModelTasks extends Library\ModelDatabase
+class ModelTasks extends Library\ModelDatabase
 {
     public function __construct(Library\ObjectConfig $config)
     {
@@ -37,7 +38,7 @@ class TodoModelTasks extends Library\ModelDatabase
 
         $state = $this->getState();
 
-        if (!is_null($state->enabled)) {
+        if (is_numeric($state->enabled)) {
             $query->where('(tbl.enabled IN :enabled)')->bind(array('enabled' => (array) $state->enabled));
         }
     }
