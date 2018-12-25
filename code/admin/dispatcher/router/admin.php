@@ -11,7 +11,7 @@ namespace Foliolabs\Todo\Admin;
 use Foliolabs\Component\Base;
 use Kodekit\Library;
 
-class DispatcherRouterPage extends Base\DispatcherRouterPage
+class DispatcherRouterAdmin extends Base\DispatcherRouterAdmin
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

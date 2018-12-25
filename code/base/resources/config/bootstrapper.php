@@ -10,9 +10,15 @@
 
 return [
     'identifiers' => [
-        'com:base.controller.page' => [
+        'com:base.dispatcher.page' => [
             'shortcodes' => [
                 'com:todo.shortcode.todo'
+            ],
+            'endpoints' => [
+                'todo-page' => [
+                    'route' => 'component=todo&view=tasks',
+                    'title' => 'Todo page',
+                ]
             ]
         ]
     ]
