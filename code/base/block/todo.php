@@ -13,20 +13,19 @@ use Foliolabs\Component\Base;
 use Kodekit\Library;
 
 /**
- * Include shortcode
+ * Block
  *
  * @author  Ercan Ozkaya <http://github.com/ercanozkaya>
  * @package Foliolabs\Component\Base
  */
-class ShortcodeTodo extends Base\ShortcodePage
+class BlockTodo extends Base\BlockPage
 {
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append([
-            'code'       => 'foliolabs-todo',
-            'attributes' => [
-                'component' => 'todo'
-            ]
+            'name'  => 'foliolabs-todo',
+            'title' => 'Foliolabs Todo',
+            'description' => 'Displays a list of todo items. Only use on pages, NOT posts.'
         ]);
 
         parent::_initialize($config);

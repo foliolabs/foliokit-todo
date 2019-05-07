@@ -11,8 +11,8 @@
 return [
     'identifiers' => [
         'com:base.dispatcher.page' => [
-            'shortcodes' => [
-                'com:todo.shortcode.todo'
+            'blocks' => [
+                'com:todo.block.todo'
             ],
             'endpoints' => [
                 'todo-page' => [
@@ -20,6 +20,11 @@ return [
                     'title' => 'Todo page',
                 ]
             ]
-        ]
+        ],
+        'com:scheduler.controller.dispatcher' => array(
+            'jobs' => array(
+                'com:todo.job.foo',
+            )
+        ),
     ]
 ];
