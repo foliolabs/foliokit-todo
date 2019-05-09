@@ -7,9 +7,9 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-function todo_install()
+return function()
 {
-    if(is_plugin_active('foliokit/foliokit.php'))
+    if(is_plugin_active('foliokit/foliokit.php') && did_action('foliokit_after_bootstrap'))
     {
         $installed = get_option('todo_installed');
 
@@ -26,4 +26,4 @@ function todo_install()
         }
     }
     else wp_die("FolioKit is required!");
-}
+};

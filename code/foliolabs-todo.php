@@ -17,24 +17,6 @@ Author URI: http://foliolabs.com/
 */
 defined( 'ABSPATH' ) or die();
 
-
-register_activation_hook(__FILE__, function() {
-    require_once __DIR__.'/base/resources/install/install.php';
-    todo_install();
-});
-
-add_action('foliokit_before_bootstrap', function()
-{
+add_action('foliokit_before_bootstrap', function() {
     foliokit_register_plugin(__FILE__);
-
-    /*
-    // Check for updates
-    if(is_admin())
-    {
-        $manager->getObject('com://admin/todo.resources.updater', array(
-            'plugin_file'  => __FILE__,
-            'releases_url' => 'https://api.github.com/repos/foliolabs/foliolabs-todo/releases'
-        ));
-    }
-    */
 });

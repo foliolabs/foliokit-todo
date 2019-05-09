@@ -35,8 +35,6 @@ class DispatcherRouter extends Base\DispatcherRouterAbstract
                     $query['id'] = array_shift($segments);
                 }
             }
-        } else {
-            $query['view'] = 'tasks';
         }
 
         return $query;

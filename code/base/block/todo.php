@@ -30,4 +30,16 @@ class BlockTodo extends Base\BlockPage
 
         parent::_initialize($config);
     }
+
+    public function beforeSave($context)
+    {
+        $context->append([
+            'query' => [
+                'component' => 'todo',
+                'view'      => 'tasks'
+            ]
+        ]);
+
+        parent::beforeSave($context);
+    }
 }
