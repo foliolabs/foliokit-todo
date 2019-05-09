@@ -7,17 +7,18 @@
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
 
-return function()
-{
-    delete_option('todo_installed');
+if (!defined('WP_UNINSTALL_PLUGIN')) {
+    die;
+}
 
-    if(is_plugin_active('foliokit/foliokit.php') && did_action('foliokit_after_bootstrap'))
-    {
-        try {
-            \Kodekit::getObject('database.driver.mysqli')
-                ->execute(file_get_contents(__DIR__.'/uninstall.sql'), \Kodekit\Library\Database::MULTI_QUERY);
-        } catch (\Exception $e) {
-            if (JDEBUG) throw $e;
-        }
+delete_option('todo_installed');
+
+if(is_plugin_active('foliokit/foliokit.php') && did_action('foliokit_after_bootstrap'))
+{
+    try {
+        \Kodekit::getObject('database.driver.mysqli')
+            ->execute(file_get_contents(__DIR__.'/uninstall.sql'), \Kodekit\Library\Database::MULTI_QUERY);
+    } catch (\Exception $e) {
+        if (JDEBUG) throw $e;
     }
-};
+}
