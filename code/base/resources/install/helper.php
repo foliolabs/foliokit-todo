@@ -214,16 +214,17 @@ class InstallerHelper
 
     protected function _installFramework()
     {
-        $framework_installer = $this->plugin_dir.'/framework/component/base/resources/install/install.php';
+        $bundled_installer   = $this->plugin_dir.'/framework/component/base/resources/install/install.php';
+        $existing_installer  = WP_PLUGIN_DIR.'/foliokit/component/base/resources/install/install.php';
 
-        if (!is_file($framework_installer)) {
-            return;
-        }
+        foreach ([$bundled_installer, $existing_installer] as $installer_file) {
+            if (is_file($installer_file)) {
+                $installer = require $installer_file;
 
-        $func = require $framework_installer;
-
-        if (is_callable($func)) {
-            $func();
+                if (is_callable($installer)) {
+                    $installer();
+                }
+            }
         }
     }
 
@@ -244,7 +245,7 @@ class InstallerHelper
             if ($query != '' && $query{0} != '#') {
                 try {
                     $this->_executeQuery($query);
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                 }
             }
         }
