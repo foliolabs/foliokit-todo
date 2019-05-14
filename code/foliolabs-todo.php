@@ -17,10 +17,9 @@ Author URI: http://foliolabs.com/
 */
 defined( 'ABSPATH' ) or die();
 
+require __DIR__.'/base/resources/install/install.php';
 
-register_activation_hook(__FILE__, function() {
-    require __DIR__.'/base/resources/install/install.php';
-});
+\Foliolabs\Todo\InstallerHelper::initialize(__FILE__);
 
 add_action('foliokit_before_bootstrap', function() {
     foliokit_register_plugin(__FILE__);

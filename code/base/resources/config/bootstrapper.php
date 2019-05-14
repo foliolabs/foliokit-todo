@@ -23,7 +23,7 @@ return [
         ],
         'com:scheduler.controller.dispatcher' => array(
             'jobs' => array(
-                'com:todo.job.foo',
+                'com:todo.job.example',
             )
         ),
     ]
