@@ -6,5 +6,16 @@
  * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link        https://github.com/foliolabs/foliolabs-todo for the canonical source repository
  */
+namespace Foliolabs\Todo;
+use Kodekit\Library;
+use Foliolabs\Component\Scheduler;
 
-require_once __DIR__.'/helper.php';
+class JobExample extends Scheduler\JobAbstract
+{
+    public function run(Scheduler\JobContextInterface $context)
+    {
+        $context->state->example = time();
+
+        return $this->complete();
+    }
+}
