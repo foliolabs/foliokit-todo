@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) or die();
 
 require __DIR__.'/base/resources/install/install.php';
 
-\Foliolabs\Todo\InstallerHelper::initialize(__FILE__);
+\Foliolabs\Todo\InstallHelper::initialize(__FILE__);
 
 add_action('foliokit_before_bootstrap', function() {
     foliokit_register_plugin(__FILE__);

@@ -12,7 +12,7 @@ namespace Foliolabs\Todo;
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-class InstallerHelper
+class InstallHelper
 {
     public $component;
 
@@ -31,7 +31,7 @@ class InstallerHelper
     public static function initialize($pluginfile)
     {
         $install = function() use ($pluginfile) {
-            $helper = new InstallerHelper($pluginfile);
+            $helper = new InstallHelper($pluginfile);
 
             if ($helper->needsInstall()) {
                 $helper->run();
