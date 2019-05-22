@@ -17,6 +17,5 @@ $framework_source = realpath('../../../foliokit/code');
 
 file_put_contents($tmp.'/framework/foliokit.php', base64_encode(file_get_contents($tmp.'/framework/foliokit.php')));
 
-`cd $tmp; zip -r $name.zip *`;
-`mv $tmp/$name.zip $tmp/../$name.zip`;
+`zip -r $name.zip $name`;
 `rm -rf $tmp`;

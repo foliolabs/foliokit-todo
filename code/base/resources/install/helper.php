@@ -14,6 +14,8 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 class InstallHelper
 {
+    const UPDATES_URL = 'http://localhost/foliolabs-todo.json';
+
     public $component;
 
     public $option_namespace;
@@ -38,21 +40,16 @@ class InstallHelper
             }
         };
 
-        add_action( 'upgrader_process_complete', function($upgrader, $options) use($install, $pluginfile) {
-            if( $options['action'] == 'update' && $options['type'] == 'plugin' && isset( $options['plugins'] ) ) {
-                foreach( $options['plugins'] as $plugin ) {
-                    if( $plugin === plugin_basename($pluginfile)) {
-                        $install();
-                    }
-                }
-            }
-        }, 10, 2 );
-
         if (is_admin()) {
             add_action('plugins_loaded', $install);
         }
 
         register_activation_hook($pluginfile, $install);
+
+        require __DIR__. '/autoupdate/Puc/Todo/Autoloader.php';
+        new \Puc_Todo_Autoloader();
+
+        new \Puc_Todo_Plugin_UpdateChecker(static::UPDATES_URL, $pluginfile);
     }
 
     public function __construct($pluginfile)
