@@ -89,7 +89,9 @@ if ( !class_exists('Puc_Todo_Plugin_UpdateChecker', false) ):
             });
 
             $this->addResultFilter(function($callback) use($slug) {
-                $callback->download_url .= (strpos($callback->download_url, '?') === false ? '?' : '&').static::URL_PREFIX.$slug;
+                if (is_object($callback)) {
+                    $callback->download_url .= (strpos($callback->download_url, '?') === false ? '?' : '&').static::URL_PREFIX.$slug;
+                }
 
                 return $callback;
             });
