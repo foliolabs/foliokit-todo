@@ -19,14 +19,14 @@ $button_size   = 'btn-small';
 
         <? // Edit ?>
         <? if (can('edit')): ?>
-            <a class="btn <?= $button_size ?>" href="<?= route('view=task&id='.$task->id.'&layout=form')?>"><?= translate('Edit'); ?></a>
+            <a class="btn <?= $button_size ?>" href="<?= route($task, 'layout=form')?>"><?= translate('Edit'); ?></a>
         <? endif ?>
 
         <? // Delete ?>
         <? if (can('delete')):
             $data = array(
                 'method' => 'post',
-                'url'    => (string)route('view=task&id='.$task->id),
+                'url'    => (string)route($task),
                 'params' => array(
                     'csrf_token' => object('user')->getSession()->getToken(),
                     '_method'    => 'delete',

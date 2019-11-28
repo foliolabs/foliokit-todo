@@ -15,7 +15,7 @@ defined('KODEKIT') or die; ?>
     <h4 class="koowa_header">
         <? // Header title ?>
         <span class="koowa_header__task">
-            <a class="koowa_header__title_link" href="<?= route('view=task&id='.$task->id); ?>">
+            <a class="koowa_header__title_link" href="<?= route($task, ['view' => 'task']); ?>">
                 <?= escape($task->title); ?>
             </a>
          </span>
